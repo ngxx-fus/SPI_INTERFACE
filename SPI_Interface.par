@@ -1,0 +1,25 @@
+Release 14.7 par P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+msnp-X409FA::  Sat Apr 13 17:42:17 2024
+
+par -w -intstyle ise -ol high -t 1 SPI_Interface_map.ncd SPI_Interface.ncd
+SPI_Interface.pcf 
+
+
+Constraints file: SPI_Interface.pcf.
+Loading device for application Rf_Device from file '3s500e.nph' in environment /opt/Xilinx/14.7/ISE_DS/ISE/.
+   "SPI_Interface" is an NCD, version 3.2, device xc3s500e, package fg320, speed -4
+
+Initializing temperature to 85.000 Celsius. (default - Range: -40.000 to 100.000 Celsius)
+Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.320 Volts)
+
+INFO:Par:282 - No user timing constraints were detected or you have set the option to ignore timing constraints ("par
+   -x"). Place and Route will run in "Performance Evaluation Mode" to automatically improve the performance of all
+   internal clocks in this design. Because there are not defined timing requirements, a timing score will not be
+   reported in the PAR report in this mode. The PAR timing summary will list the performance achieved for each clock.
+   Note: For the fastest runtime, set the effort level to "std".  For best performance, set the effort level to "high".
+
+Device speed data version:  "PRODUCTION 1.27 2013-10-13".
+
+

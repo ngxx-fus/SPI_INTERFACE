@@ -58,11 +58,11 @@
 <arg fmt="%s" index="3">&lt;RE&gt;, &lt;FULL_STATE&gt;, &lt;READ&gt;</arg>
 </msg>
 
-<msg type="warning" file="Xst" num="905" delta="old" >&quot;<arg fmt="%s" index="1">status.v</arg>&quot; line <arg fmt="%d" index="2">49</arg>: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<msg type="warning" file="Xst" num="905" delta="old" >&quot;<arg fmt="%s" index="1">status.v</arg>&quot; line <arg fmt="%d" index="2">51</arg>: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
 <arg fmt="%s" index="3">&lt;HIGH&gt;, &lt;LOW&gt;</arg>
 </msg>
 
-<msg type="warning" file="Xst" num="905" delta="old" >&quot;<arg fmt="%s" index="1">status.v</arg>&quot; line <arg fmt="%d" index="2">57</arg>: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<msg type="warning" file="Xst" num="905" delta="old" >&quot;<arg fmt="%s" index="1">status.v</arg>&quot; line <arg fmt="%d" index="2">59</arg>: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
 <arg fmt="%s" index="3">&lt;RECEIVER_REG_EMPTY&gt;</arg>
 </msg>
 
@@ -185,7 +185,7 @@
 It will be removed from the design.
 </msg>
 
-<msg type="warning" file="Xst" num="1290" delta="old" >Hierarchical block &lt;<arg fmt="%s" index="1">receiver_shift_register</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">receiver</arg>&gt;.
+<msg type="warning" file="Xst" num="1290" delta="old" >Hierarchical block &lt;<arg fmt="%s" index="1">receiver</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
 It will be removed from the design.
 </msg>
 
@@ -241,19 +241,138 @@ It will be removed from the design.
 It will be removed from the design.
 </msg>
 
-<msg type="error" file="Xst" num="528" delta="old" >Multi-source in Unit &lt;<arg fmt="%s" index="1">STATUS_COMBINATION</arg>&gt; on signal &lt;<arg fmt="%s" index="2">SENDER_REG_EMPTY</arg>&gt;; this signal is connected to multiple drivers.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">control/SENDER_BUFFER_FULL_STATE</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
 </msg>
 
-<msg type="error" file="Xst" num="528" delta="old" >Multi-source in Unit &lt;<arg fmt="%s" index="1">STATUS_COMBINATION</arg>&gt; on signal &lt;<arg fmt="%s" index="2">STATUS&lt;6&gt;</arg>&gt;; this signal is connected to multiple drivers.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">control/RECEIVER_BUFFER_FULL_STATE</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
 </msg>
 
-<msg type="error" file="Xst" num="528" delta="old" >Multi-source in Unit &lt;<arg fmt="%s" index="1">STATUS_COMBINATION</arg>&gt; on signal &lt;<arg fmt="%s" index="2">STATUS&lt;5&gt;</arg>&gt;; this signal is connected to multiple drivers.
+<msg type="warning" file="Xst" num="2042" delta="old" >Unit <arg fmt="%s" index="1">RECEIVER</arg>: <arg fmt="%d" index="2">8</arg> internal tristates are replaced by logic (pull-up <arg fmt="%s" index="3">yes</arg>): </msg>
+
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">sender/sender_shift_register/shift_register_1/dff3/Q</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">SPI_Interface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="error" file="Xst" num="528" delta="old" >Multi-source in Unit &lt;<arg fmt="%s" index="1">STATUS_COMBINATION</arg>&gt; on signal &lt;<arg fmt="%s" index="2">STATUS&lt;3&gt;</arg>&gt;; this signal is connected to multiple drivers.
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">sender/sender_shift_register/shift_register_1/dff2/Q</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">SPI_Interface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="error" file="Xst" num="528" delta="old" >Multi-source in Unit &lt;<arg fmt="%s" index="1">STATUS_COMBINATION</arg>&gt; on signal &lt;<arg fmt="%s" index="2">STATUS&lt;2&gt;</arg>&gt;; this signal is connected to multiple drivers.
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">sender/sender_shift_register/shift_register_1/dff1/Q</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">SPI_Interface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">sender/sender_shift_register/shift_register_1/dff0/Q</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">SPI_Interface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">sender/sender_shift_register/shift_register_0/dff3/Q</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">SPI_Interface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">sender/sender_shift_register/shift_register_0/dff2/Q</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">SPI_Interface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">sender/sender_shift_register/shift_register_0/dff1/Q</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">SPI_Interface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">sender/sender_shift_register/shift_register_0/dff0/Q</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">SPI_Interface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">RECEIVER_BUFFER/shift_register_0/dff0/Q</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">SPI_Interface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">RECEIVER_BUFFER/shift_register_0/dff1/Q</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">SPI_Interface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">RECEIVER_BUFFER/shift_register_0/dff2/Q</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">SPI_Interface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">RECEIVER_BUFFER/shift_register_0/dff3/Q</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">SPI_Interface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">RECEIVER_BUFFER/shift_register_1/dff0/Q</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">SPI_Interface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">RECEIVER_BUFFER/shift_register_1/dff1/Q</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">SPI_Interface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">RECEIVER_BUFFER/shift_register_1/dff2/Q</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">SPI_Interface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">RECEIVER_BUFFER/shift_register_1/dff3/Q</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">SPI_Interface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">control/RECEIVER_READ</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SENDER_BUFFER/shift_register_0/dff0/Q</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SENDER_BUFFER/shift_register_0/dff1/Q</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SENDER_BUFFER/shift_register_0/dff2/Q</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SENDER_BUFFER/shift_register_0/dff3/Q</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SENDER_BUFFER/shift_register_1/dff0/Q</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SENDER_BUFFER/shift_register_1/dff1/Q</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SENDER_BUFFER/shift_register_1/dff2/Q</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SENDER_BUFFER/shift_register_1/dff3/Q</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">receiver/receiver_shift_register/shift_register_1/dff3/Q</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">receiver/receiver_shift_register/shift_register_1/dff2/Q</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">receiver/receiver_shift_register/shift_register_1/dff1/Q</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">receiver/receiver_shift_register/shift_register_1/dff0/Q</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">receiver/receiver_shift_register/shift_register_0/dff3/Q</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">receiver/receiver_shift_register/shift_register_0/dff2/Q</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">receiver/receiver_shift_register/shift_register_0/dff1/Q</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">receiver/receiver_shift_register/shift_register_0/dff0/Q</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">receiver/COUNT_RECEIVED_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">receiver/COUNT_RECEIVED_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">receiver/COUNT_RECEIVED_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">receiver/COUNT_RECEIVED_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">control/SENDER_WRITE</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">sender/COUNT_SENT_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">sender/COUNT_SENT_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">sender/COUNT_SENT_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">sender/COUNT_SENT_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI_Interface</arg>&gt;.
 </msg>
 
 </messages>
