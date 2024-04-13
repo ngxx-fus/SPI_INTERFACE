@@ -9,7 +9,6 @@ module STATUS_COMBINATION (
 
     input SENDER_WRITE,
     input RECEIVER_READ,
-
     input S_CLK,
     input CLR,
     
@@ -33,8 +32,6 @@ module STATUS_COMBINATION (
         else
             LOCAL_STATUS[2] = LOW;
     end
-
-
     // LOCAL_STATUS [3]
     always @(posedge S_CLK)//RESET LOCAL_STATUS[3] when CLEAR 
     begin   

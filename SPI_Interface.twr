@@ -38,18 +38,268 @@ INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and
 
 Data Sheet report:
 -----------------
-No constraints were found to generate data for the Data Sheet Report section.
-Use the Advanced Analysis (-a) option or generate global constraints for each
-clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
+All values displayed in nanoseconds (ns)
 
-Analysis completed Sat Apr 13 18:00:00 2024 
+Setup/Hold to clock CLK
+------------+------------+------------+----------------------------------------------------------------+--------+
+            |Max Setup to|Max Hold to |                                                                | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s)                                               | Phase  |
+------------+------------+------------+----------------------------------------------------------------+--------+
+MISO        |   -1.197(F)|    2.828(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+------------+------------+------------+----------------------------------------------------------------+--------+
+
+Setup/Hold to clock CLR
+----------------+------------+------------+----------------------------------------------------------------+--------+
+                |Max Setup to|Max Hold to |                                                                | Clock  |
+Source          | clk (edge) | clk (edge) |Internal Clock(s)                                               | Phase  |
+----------------+------------+------------+----------------------------------------------------------------+--------+
+INCOMING_DATA<0>|   -0.596(F)|    2.178(F)|SENDER_BUFFER/shift_register_0/dff0/Q_not0001                   |   0.000|
+INCOMING_DATA<1>|   -0.599(F)|    2.003(F)|SENDER_BUFFER/shift_register_0/dff0/Q_not0001                   |   0.000|
+INCOMING_DATA<2>|    0.044(F)|    1.488(F)|SENDER_BUFFER/shift_register_0/dff0/Q_not0001                   |   0.000|
+INCOMING_DATA<3>|   -0.360(F)|    1.811(F)|SENDER_BUFFER/shift_register_0/dff0/Q_not0001                   |   0.000|
+INCOMING_DATA<4>|   -0.307(F)|    1.768(F)|SENDER_BUFFER/shift_register_0/dff0/Q_not0001                   |   0.000|
+INCOMING_DATA<5>|   -0.561(F)|    1.977(F)|SENDER_BUFFER/shift_register_0/dff0/Q_not0001                   |   0.000|
+INCOMING_DATA<6>|   -0.563(F)|    1.978(F)|SENDER_BUFFER/shift_register_0/dff0/Q_not0001                   |   0.000|
+INCOMING_DATA<7>|   -0.329(F)|    1.877(F)|SENDER_BUFFER/shift_register_0/dff0/Q_not0001                   |   0.000|
+MISO            |   -0.253(F)|    1.648(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+----------------+------------+------------+----------------------------------------------------------------+--------+
+
+Setup/Hold to clock CONTROL<0>
+------------+------------+------------+----------------------------------------------------------------+--------+
+            |Max Setup to|Max Hold to |                                                                | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s)                                               | Phase  |
+------------+------------+------------+----------------------------------------------------------------+--------+
+MISO        |   -1.462(F)|    3.159(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+------------+------------+------------+----------------------------------------------------------------+--------+
+
+Setup/Hold to clock CONTROL<5>
+------------+------------+------------+----------------------------------------------------------------+--------+
+            |Max Setup to|Max Hold to |                                                                | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s)                                               | Phase  |
+------------+------------+------------+----------------------------------------------------------------+--------+
+MISO        |   -2.360(F)|    4.281(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+------------+------------+------------+----------------------------------------------------------------+--------+
+
+Setup/Hold to clock WRITE
+----------------+------------+------------+---------------------------------------------+--------+
+                |Max Setup to|Max Hold to |                                             | Clock  |
+Source          | clk (edge) | clk (edge) |Internal Clock(s)                            | Phase  |
+----------------+------------+------------+---------------------------------------------+--------+
+INCOMING_DATA<0>|   -1.509(F)|    3.319(F)|SENDER_BUFFER/shift_register_0/dff0/Q_not0001|   0.000|
+INCOMING_DATA<1>|   -1.512(F)|    3.144(F)|SENDER_BUFFER/shift_register_0/dff0/Q_not0001|   0.000|
+INCOMING_DATA<2>|   -0.869(F)|    2.629(F)|SENDER_BUFFER/shift_register_0/dff0/Q_not0001|   0.000|
+INCOMING_DATA<3>|   -1.273(F)|    2.952(F)|SENDER_BUFFER/shift_register_0/dff0/Q_not0001|   0.000|
+INCOMING_DATA<4>|   -1.220(F)|    2.909(F)|SENDER_BUFFER/shift_register_0/dff0/Q_not0001|   0.000|
+INCOMING_DATA<5>|   -1.474(F)|    3.118(F)|SENDER_BUFFER/shift_register_0/dff0/Q_not0001|   0.000|
+INCOMING_DATA<6>|   -1.476(F)|    3.119(F)|SENDER_BUFFER/shift_register_0/dff0/Q_not0001|   0.000|
+INCOMING_DATA<7>|   -1.242(F)|    3.018(F)|SENDER_BUFFER/shift_register_0/dff0/Q_not0001|   0.000|
+----------------+------------+------------+---------------------------------------------+--------+
+
+Clock CLK to Pad
+-----------------+------------+----------------------------------------------------------------+--------+
+                 | clk (edge) |                                                                | Clock  |
+Destination      |   to PAD   |Internal Clock(s)                                               | Phase  |
+-----------------+------------+----------------------------------------------------------------+--------+
+MOSI             |    8.907(F)|sender/sender_shift_register/shift_register_0/dff0/Q_not0001    |   0.000|
+OUTCOMING_DATA<0>|   10.810(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<1>|   10.781(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<2>|   11.777(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<3>|   10.357(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<4>|   10.600(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<5>|   10.709(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<6>|   10.941(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<7>|   10.325(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+-----------------+------------+----------------------------------------------------------------+--------+
+
+Clock CLR to Pad
+-----------------+------------+----------------------------------------------------------------+--------+
+                 | clk (edge) |                                                                | Clock  |
+Destination      |   to PAD   |Internal Clock(s)                                               | Phase  |
+-----------------+------------+----------------------------------------------------------------+--------+
+MOSI             |    8.915(F)|sender/sender_shift_register/shift_register_0/dff0/Q_not0001    |   0.000|
+OUTCOMING_DATA<0>|    9.630(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<1>|    9.601(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<2>|   10.597(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<3>|    9.177(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<4>|    9.420(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<5>|    9.529(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<6>|    9.761(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<7>|    9.145(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+-----------------+------------+----------------------------------------------------------------+--------+
+
+Clock CONTROL<0> to Pad
+-----------------+------------+----------------------------------------------------------------+--------+
+                 | clk (edge) |                                                                | Clock  |
+Destination      |   to PAD   |Internal Clock(s)                                               | Phase  |
+-----------------+------------+----------------------------------------------------------------+--------+
+OUTCOMING_DATA<0>|   11.141(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<1>|   11.112(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<2>|   12.108(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<3>|   10.688(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<4>|   10.931(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<5>|   11.040(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<6>|   11.272(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<7>|   10.656(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+-----------------+------------+----------------------------------------------------------------+--------+
+
+Clock CONTROL<1> to Pad
+------------+------------+------------------------------------------------------------+--------+
+            | clk (edge) |                                                            | Clock  |
+Destination |   to PAD   |Internal Clock(s)                                           | Phase  |
+------------+------------+------------------------------------------------------------+--------+
+MOSI        |    9.183(F)|sender/sender_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+------------+------------+------------------------------------------------------------+--------+
+
+Clock CONTROL<5> to Pad
+-----------------+------------+----------------------------------------------------------------+--------+
+                 | clk (edge) |                                                                | Clock  |
+Destination      |   to PAD   |Internal Clock(s)                                               | Phase  |
+-----------------+------------+----------------------------------------------------------------+--------+
+MOSI             |    9.449(F)|sender/sender_shift_register/shift_register_0/dff0/Q_not0001    |   0.000|
+OUTCOMING_DATA<0>|   12.263(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<1>|   12.234(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<2>|   13.230(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<3>|   11.810(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<4>|   12.053(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<5>|   12.162(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<6>|   12.394(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+OUTCOMING_DATA<7>|   11.778(F)|receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001|   0.000|
+-----------------+------------+----------------------------------------------------------------+--------+
+
+Clock READ to Pad
+-----------------+------------+------------------+--------+
+                 | clk (edge) |                  | Clock  |
+Destination      |   to PAD   |Internal Clock(s) | Phase  |
+-----------------+------------+------------------+--------+
+OUTCOMING_DATA<0>|    9.226(R)|READ_IBUF         |   0.000|
+OUTCOMING_DATA<1>|    9.366(R)|READ_IBUF         |   0.000|
+OUTCOMING_DATA<2>|    9.614(R)|READ_IBUF         |   0.000|
+OUTCOMING_DATA<3>|    9.139(R)|READ_IBUF         |   0.000|
+OUTCOMING_DATA<4>|    9.133(R)|READ_IBUF         |   0.000|
+OUTCOMING_DATA<5>|    9.070(R)|READ_IBUF         |   0.000|
+OUTCOMING_DATA<6>|    9.981(R)|READ_IBUF         |   0.000|
+OUTCOMING_DATA<7>|    9.223(R)|READ_IBUF         |   0.000|
+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |         |         |    2.323|    2.323|
+CLR            |         |         |    2.520|    3.577|
+CONTROL<0>     |         |         |    0.821|    5.746|
+CONTROL<1>     |         |         |    2.719|    2.719|
+CONTROL<5>     |         |         |    2.985|    5.746|
+READ           |         |         |    4.197|         |
+WRITE          |         |         |    5.523|    3.577|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock CLR
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |         |         |    2.316|    2.316|
+CLR            |         |         |    2.513|    3.577|
+CONTROL<0>     |         |         |    1.765|    5.746|
+CONTROL<1>     |         |         |    2.712|    2.712|
+CONTROL<5>     |         |         |    2.978|    5.746|
+READ           |         |         |    4.197|         |
+WRITE          |         |         |    5.523|    3.577|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock CONTROL<0>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |         |         |    0.225|    2.191|
+CLR            |         |         |    0.081|    2.191|
+CONTROL<0>     |         |         |    0.556|    5.746|
+CONTROL<5>     |         |         |    1.678|    5.746|
+READ           |         |         |    4.197|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock CONTROL<1>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |         |         |    2.102|    2.118|
+CLR            |         |         |    2.299|    3.577|
+CONTROL<1>     |         |         |    2.498|    3.234|
+CONTROL<5>     |         |         |    2.764|    3.234|
+WRITE          |         |         |    5.523|    3.577|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock CONTROL<5>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |         |         |    1.889|    2.191|
+CLR            |         |         |    2.086|    3.577|
+CONTROL<0>     |         |         |   -0.342|    5.746|
+CONTROL<1>     |         |         |    2.285|    3.234|
+CONTROL<5>     |         |         |    2.551|    5.746|
+READ           |         |         |    4.197|         |
+WRITE          |         |         |    5.523|    3.577|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock READ
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CONTROL<0>     |         |    4.856|         |         |
+CONTROL<5>     |         |    4.856|         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock WRITE
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLR            |         |         |   -0.349|   -0.349|
+CONTROL<1>     |         |    4.943|         |         |
+CONTROL<5>     |         |    4.943|         |         |
+WRITE          |         |         |    0.731|    0.731|
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+-----------------+---------+
+Source Pad     |Destination Pad  |  Delay  |
+---------------+-----------------+---------+
+CLR            |OUTCOMING_DATA<0>|    6.631|
+CLR            |OUTCOMING_DATA<1>|    7.518|
+CLR            |OUTCOMING_DATA<2>|    7.509|
+CLR            |OUTCOMING_DATA<3>|    6.491|
+CLR            |OUTCOMING_DATA<4>|    6.818|
+CLR            |OUTCOMING_DATA<5>|    8.110|
+CLR            |OUTCOMING_DATA<6>|    8.117|
+CLR            |OUTCOMING_DATA<7>|    6.597|
+CONTROL<1>     |MOSI             |    6.301|
+CONTROL<5>     |MOSI             |    6.454|
+READ           |OUTCOMING_DATA<0>|    7.665|
+READ           |OUTCOMING_DATA<1>|    8.261|
+READ           |OUTCOMING_DATA<2>|    8.834|
+READ           |OUTCOMING_DATA<3>|    8.193|
+READ           |OUTCOMING_DATA<4>|    7.945|
+READ           |OUTCOMING_DATA<5>|    8.209|
+READ           |OUTCOMING_DATA<6>|    8.193|
+READ           |OUTCOMING_DATA<7>|    8.510|
+---------------+-----------------+---------+
+
+
+Analysis completed Sat Apr 13 19:27:38 2024 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 333 MB
+Peak Memory Usage: 337 MB
 
 
 

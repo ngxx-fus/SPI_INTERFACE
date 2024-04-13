@@ -9,28 +9,54 @@ Target Device  : xc3s500e
 Target Package : fg320
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Sat Apr 13 17:59:47 2024
+Mapped Date    : Sat Apr 13 19:27:20 2024
 
 Mapping design into LUTs...
 Running directed packing...
 Running delay-based LUT packing...
 Running related packing...
 Updating timing models...
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001 is sourced
+   by a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   sender/sender_shift_register/shift_register_0/dff0/Q_not0001 is sourced by a
+   combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   SENDER_BUFFER/shift_register_0/dff0/Q_not0001 is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net TE is sourced by a
+   combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   receiver/COUNT_RECEIVED_and0000 is sourced by a combinatorial pin. This is
+   not good design practice. Use the CE pin to control the loading of data into
+   the flip-flop.
 
 Design Summary
 --------------
 
 Design Summary:
 Number of errors:      0
-Number of warnings:    0
+Number of warnings:    5
 Logic Utilization:
+  Number of Slice Latches:               34 out of   9,312    1%
+  Number of 4 input LUTs:                54 out of   9,312    1%
 Logic Distribution:
-    Number of Slices containing only related logic:       0 out of       0   0%
-    Number of Slices containing unrelated logic:          0 out of       0   0%
+  Number of occupied Slices:             30 out of   4,656    1%
+    Number of Slices containing only related logic:      30 out of      30 100%
+    Number of Slices containing unrelated logic:          0 out of      30   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Number of bonded IOBs:                 17 out of     232    7%
+  Total Number of 4 input LUTs:          54 out of   9,312    1%
+  Number of bonded IOBs:                 33 out of     232   14%
+  Number of BUFGMUXs:                     2 out of      24    8%
 
-Peak Memory Usage:  579 MB
+Average Fanout of Non-Clock Nets:                2.89
+
+Peak Memory Usage:  580 MB
 Total REAL time to MAP completion:  1 secs 
 Total CPU time to MAP completion:   1 secs 
 

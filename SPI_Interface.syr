@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Reading design: SPI_Interface.prj
@@ -174,10 +174,10 @@ Analyzing module <SHIFT_REGISTER_4BIT> in library <work>.
 Module <SHIFT_REGISTER_4BIT> is correct for synthesis.
  
 Analyzing module <d_ff> in library <work>.
-WARNING:Xst:916 - "d_ff.v" line 13: Delay is ignored for synthesis.
+WARNING:Xst:916 - "d_ff.v" line 12: Delay is ignored for synthesis.
+WARNING:Xst:916 - "d_ff.v" line 14: Delay is ignored for synthesis.
 WARNING:Xst:916 - "d_ff.v" line 15: Delay is ignored for synthesis.
-WARNING:Xst:916 - "d_ff.v" line 16: Delay is ignored for synthesis.
-WARNING:Xst:905 - "d_ff.v" line 9: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:905 - "d_ff.v" line 8: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <DATA>
 Module <d_ff> is correct for synthesis.
  
@@ -198,9 +198,9 @@ WARNING:Xst:905 - "sender_receiver.v" line 89: One or more signals are missing i
 Module <RECEIVER> is correct for synthesis.
  
 Analyzing module <STATUS_COMBINATION> in library <work>.
-WARNING:Xst:905 - "status.v" line 57: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:905 - "status.v" line 54: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <HIGH>, <LOW>
-WARNING:Xst:905 - "status.v" line 65: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:905 - "status.v" line 62: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <RECEIVER_EMPTY_STATE>
 Module <STATUS_COMBINATION> is correct for synthesis.
  
@@ -262,7 +262,7 @@ Unit <CONTROL_COMBINATION> synthesized.
 
 Synthesizing Unit <d_ff>.
     Related source file is "d_ff.v".
-WARNING:Xst:737 - Found 1-bit latch for signal <STORED_BIT>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 Unit <d_ff> synthesized.
 
@@ -308,7 +308,6 @@ WARNING:Xst:646 - Signal <SENDER_REG_FULL> is assigned but never used. This unco
 WARNING:Xst:653 - Signal <SENDER_FULL_STATE> is used but never assigned. This sourceless signal will be automatically connected to value 0.
 WARNING:Xst:646 - Signal <SENDER_BUFFER_FULL_STATE> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <RECEIVER_BUFFER_FULL_STATE> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:653 - Signal <RECEIVER_BUFFER_DATA_I> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
     Found 8-bit tristate buffer for signal <OUTCOMING_DATA>.
     Summary:
 	inferred   8 Tristate(s).
@@ -336,14 +335,6 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <STORED_BIT>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <STORED_BIT>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <STORED_BIT>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <STORED_BIT>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <STORED_BIT>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <STORED_BIT>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <STORED_BIT>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <STORED_BIT>. This FF/Latch will be trimmed during the optimization process.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -360,57 +351,397 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:2677 - Node <control/SENDER_BUFFER_FULL_STATE> of sequential type is unconnected in block <SPI_Interface>.
+WARNING:Xst:2677 - Node <control/RECEIVER_BUFFER_FULL_STATE> of sequential type is unconnected in block <SPI_Interface>.
+WARNING:Xst:2042 - Unit RECEIVER: 8 internal tristates are replaced by logic (pull-up yes): DATA<0>, DATA<1>, DATA<2>, DATA<3>, DATA<4>, DATA<5>, DATA<6>, DATA<7>.
 
-ERROR:Xst:528 - Multi-source in Unit <SPI_Interface> on signal <RECEIVER_BUFFER_DATA_O<7>>; this signal is connected to multiple drivers.
-Drivers are: 
-   Output signal of LD instance <RECEIVER_BUFFER/shift_register_0/dff0/STORED_BIT/0>
-   Output signal of BUFT instance <receiver/DATA_P_DATA_OUT_7>
+Optimizing unit <SPI_Interface> ...
 
-ERROR:Xst:528 - Multi-source in Unit <SPI_Interface> on signal <RECEIVER_BUFFER_DATA_O<6>>; this signal is connected to multiple drivers.
-Drivers are: 
-   Output signal of LD instance <RECEIVER_BUFFER/shift_register_0/dff1/STORED_BIT/0>
-   Output signal of BUFT instance <receiver/DATA_P_DATA_OUT_6>
+Optimizing unit <SHIFT_REGISTER_4BIT> ...
 
-ERROR:Xst:528 - Multi-source in Unit <SPI_Interface> on signal <RECEIVER_BUFFER_DATA_O<5>>; this signal is connected to multiple drivers.
-Drivers are: 
-   Output signal of LD instance <RECEIVER_BUFFER/shift_register_0/dff2/STORED_BIT/0>
-   Output signal of BUFT instance <receiver/DATA_P_DATA_OUT_5>
+Optimizing unit <SENDER> ...
 
-ERROR:Xst:528 - Multi-source in Unit <SPI_Interface> on signal <RECEIVER_BUFFER_DATA_O<4>>; this signal is connected to multiple drivers.
-Drivers are: 
-   Output signal of LD instance <RECEIVER_BUFFER/shift_register_0/dff3/STORED_BIT/0>
-   Output signal of BUFT instance <receiver/DATA_P_DATA_OUT_4>
+Optimizing unit <RECEIVER> ...
+WARNING:Xst:1294 - Latch <RECEIVER_BUFFER/shift_register_0/dff0/Q> is equivalent to a wire in block <SPI_Interface>.
+WARNING:Xst:1294 - Latch <RECEIVER_BUFFER/shift_register_0/dff1/Q> is equivalent to a wire in block <SPI_Interface>.
+WARNING:Xst:1294 - Latch <RECEIVER_BUFFER/shift_register_0/dff2/Q> is equivalent to a wire in block <SPI_Interface>.
+WARNING:Xst:1294 - Latch <RECEIVER_BUFFER/shift_register_0/dff3/Q> is equivalent to a wire in block <SPI_Interface>.
+WARNING:Xst:1294 - Latch <RECEIVER_BUFFER/shift_register_1/dff0/Q> is equivalent to a wire in block <SPI_Interface>.
+WARNING:Xst:1294 - Latch <RECEIVER_BUFFER/shift_register_1/dff1/Q> is equivalent to a wire in block <SPI_Interface>.
+WARNING:Xst:1294 - Latch <RECEIVER_BUFFER/shift_register_1/dff2/Q> is equivalent to a wire in block <SPI_Interface>.
+WARNING:Xst:1294 - Latch <RECEIVER_BUFFER/shift_register_1/dff3/Q> is equivalent to a wire in block <SPI_Interface>.
 
-ERROR:Xst:528 - Multi-source in Unit <SPI_Interface> on signal <RECEIVER_BUFFER_DATA_O<3>>; this signal is connected to multiple drivers.
-Drivers are: 
-   Output signal of LD instance <RECEIVER_BUFFER/shift_register_1/dff0/STORED_BIT/0>
-   Output signal of BUFT instance <receiver/DATA_P_DATA_OUT_3>
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block SPI_Interface, actual ratio is 0.
 
-ERROR:Xst:528 - Multi-source in Unit <SPI_Interface> on signal <RECEIVER_BUFFER_DATA_O<2>>; this signal is connected to multiple drivers.
-Drivers are: 
-   Output signal of LD instance <RECEIVER_BUFFER/shift_register_1/dff1/STORED_BIT/0>
-   Output signal of BUFT instance <receiver/DATA_P_DATA_OUT_2>
+Final Macro Processing ...
 
-ERROR:Xst:528 - Multi-source in Unit <SPI_Interface> on signal <RECEIVER_BUFFER_DATA_O<1>>; this signal is connected to multiple drivers.
-Drivers are: 
-   Output signal of LD instance <RECEIVER_BUFFER/shift_register_1/dff2/STORED_BIT/0>
-   Output signal of BUFT instance <receiver/DATA_P_DATA_OUT_1>
+=========================================================================
+Final Register Report
 
-ERROR:Xst:528 - Multi-source in Unit <SPI_Interface> on signal <RECEIVER_BUFFER_DATA_O<0>>; this signal is connected to multiple drivers.
-Drivers are: 
-   Output signal of LD instance <RECEIVER_BUFFER/shift_register_1/dff3/STORED_BIT/0>
-   Output signal of BUFT instance <receiver/DATA_P_DATA_OUT_0>
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : SPI_Interface.ngr
+Top Level Output File Name         : SPI_Interface
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 41
+
+Cell Usage :
+# BELS                             : 60
+#      GND                         : 1
+#      INV                         : 4
+#      LUT2                        : 8
+#      LUT3                        : 29
+#      LUT4                        : 16
+#      MUXF5                       : 1
+#      VCC                         : 1
+# FlipFlops/Latches                : 34
+#      LD                          : 24
+#      LD_1                        : 2
+#      LDCE                        : 7
+#      LDCPE                       : 1
+# Clock Buffers                    : 2
+#      BUFG                        : 2
+# IO Buffers                       : 33
+#      IBUF                        : 16
+#      OBUF                        : 9
+#      OBUFT                       : 8
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                       30  out of   4656     0%  
+ Number of Slice Flip Flops:             34  out of   9312     0%  
+ Number of 4 input LUTs:                 57  out of   9312     0%  
+ Number of IOs:                          41
+ Number of bonded IOBs:                  33  out of    232    14%  
+ Number of GCLKs:                         2  out of     24     8%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
+Clock Signal                                                                                                                         | Clock buffer(FF name)                                            | Load  |
+-------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
+WRITE                                                                                                                                | IBUF+BUFG                                                        | 1     |
+READ                                                                                                                                 | IBUF+BUFG                                                        | 1     |
+SENDER_BUFFER/shift_register_0/dff0/Q_not0001(SENDER_BUFFER/shift_register_1/dff0/Q_not00011:O)                                      | NONE(*)(SENDER_BUFFER/shift_register_0/dff0/Q)                   | 8     |
+sender/sender_shift_register/shift_register_0/dff0/Q_not0001(sender/sender_shift_register/shift_register_1/dff0/Q_not00011:O)        | NONE(*)(sender/sender_shift_register/shift_register_1/dff3/Q)    | 8     |
+TE(control/TE1:O)                                                                                                                    | NONE(*)(sender/COUNT_SENT_3)                                     | 4     |
+receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001(receiver/receiver_shift_register/shift_register_1/dff0/Q_not00011:O)| NONE(*)(receiver/receiver_shift_register/shift_register_1/dff3/Q)| 8     |
+receiver/COUNT_RECEIVED_and0000(receiver/COUNT_RECEIVED_and00001:O)                                                                  | NONE(*)(receiver/COUNT_RECEIVED_3)                               | 4     |
+-------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
+(*) These 5 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------------------------------------+--------------------------------+-------+
+Control Signal                                                   | Buffer(FF name)                | Load  |
+-----------------------------------------------------------------+--------------------------------+-------+
+receiver/COUNT_RECEIVED_or0000(receiver/COUNT_RECEIVED_or00001:O)| NONE(receiver/COUNT_RECEIVED_0)| 4     |
+sender/COUNT_SENT_Q_0_or0000(sender/COUNT_SENT_Q_0_or00001:O)    | NONE(sender/COUNT_SENT_0)      | 3     |
+CLR                                                              | IBUF                           | 1     |
+sender/COUNT_SENT_and0000(sender/COUNT_SENT_and00001:O)          | NONE(sender/COUNT_SENT_3)      | 1     |
+-----------------------------------------------------------------+--------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 3.228ns (Maximum Frequency: 309.789MHz)
+   Minimum input arrival time before clock: 5.891ns
+   Maximum output required time after clock: 6.180ns
+   Maximum combinational path delay: 6.956ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'sender/sender_shift_register/shift_register_0/dff0/Q_not0001'
+  Clock period: 2.187ns (frequency: 457.247MHz)
+  Total number of paths / destination ports: 7 / 7
+-------------------------------------------------------------------------
+Delay:               2.187ns (Levels of Logic = 1)
+  Source:            sender/sender_shift_register/shift_register_1/dff2/Q (LATCH)
+  Destination:       sender/sender_shift_register/shift_register_1/dff3/Q (LATCH)
+  Source Clock:      sender/sender_shift_register/shift_register_0/dff0/Q_not0001 falling
+  Destination Clock: sender/sender_shift_register/shift_register_0/dff0/Q_not0001 falling
+
+  Data Path: sender/sender_shift_register/shift_register_1/dff2/Q to sender/sender_shift_register/shift_register_1/dff3/Q
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.676   0.499  sender/sender_shift_register/shift_register_1/dff2/Q (sender/sender_shift_register/shift_register_1/dff2/Q)
+     LUT4:I1->O            1   0.704   0.000  sender/sender_shift_register/shift_register_1/dff3/Q_mux00001 (sender/sender_shift_register/shift_register_1/dff3/Q_mux0000)
+     LD:D                      0.308          sender/sender_shift_register/shift_register_1/dff3/Q
+    ----------------------------------------
+    Total                      2.187ns (1.688ns logic, 0.499ns route)
+                                       (77.2% logic, 22.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'TE'
+  Clock period: 3.228ns (frequency: 309.789MHz)
+  Total number of paths / destination ports: 26 / 8
+-------------------------------------------------------------------------
+Delay:               3.228ns (Levels of Logic = 1)
+  Source:            sender/COUNT_SENT_3 (LATCH)
+  Destination:       sender/COUNT_SENT_3 (LATCH)
+  Source Clock:      TE falling
+  Destination Clock: TE falling
+
+  Data Path: sender/COUNT_SENT_3 to sender/COUNT_SENT_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDCPE:G->Q            3   0.676   0.706  sender/COUNT_SENT_3 (sender/COUNT_SENT_3)
+     LUT4:I0->O            4   0.704   0.587  sender/COUNT_SENT_0_0_not00001 (sender/COUNT_SENT_0_0_not0000)
+     LDCE:GE                   0.555          sender/COUNT_SENT_0
+    ----------------------------------------
+    Total                      3.228ns (1.935ns logic, 1.293ns route)
+                                       (59.9% logic, 40.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001'
+  Clock period: 2.170ns (frequency: 460.829MHz)
+  Total number of paths / destination ports: 7 / 7
+-------------------------------------------------------------------------
+Delay:               2.170ns (Levels of Logic = 1)
+  Source:            receiver/receiver_shift_register/shift_register_1/dff2/Q (LATCH)
+  Destination:       receiver/receiver_shift_register/shift_register_1/dff3/Q (LATCH)
+  Source Clock:      receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001 falling
+  Destination Clock: receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001 falling
+
+  Data Path: receiver/receiver_shift_register/shift_register_1/dff2/Q to receiver/receiver_shift_register/shift_register_1/dff3/Q
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               2   0.676   0.482  receiver/receiver_shift_register/shift_register_1/dff2/Q (receiver/receiver_shift_register/shift_register_1/dff2/Q)
+     LUT3:I2->O            1   0.704   0.000  receiver/receiver_shift_register/shift_register_1/dff3/Q_mux00001 (receiver/receiver_shift_register/shift_register_1/dff3/Q_mux0000)
+     LD:D                      0.308          receiver/receiver_shift_register/shift_register_1/dff3/Q
+    ----------------------------------------
+    Total                      2.170ns (1.688ns logic, 0.482ns route)
+                                       (77.8% logic, 22.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'receiver/COUNT_RECEIVED_and0000'
+  Clock period: 2.777ns (frequency: 360.101MHz)
+  Total number of paths / destination ports: 10 / 4
+-------------------------------------------------------------------------
+Delay:               2.777ns (Levels of Logic = 1)
+  Source:            receiver/COUNT_RECEIVED_0 (LATCH)
+  Destination:       receiver/COUNT_RECEIVED_0 (LATCH)
+  Source Clock:      receiver/COUNT_RECEIVED_and0000 falling
+  Destination Clock: receiver/COUNT_RECEIVED_and0000 falling
+
+  Data Path: receiver/COUNT_RECEIVED_0 to receiver/COUNT_RECEIVED_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDCE:G->Q             6   0.676   0.669  receiver/COUNT_RECEIVED_0 (receiver/COUNT_RECEIVED_0)
+     INV:I->O              1   0.704   0.420  receiver/Madd_COUNT_RECEIVED_add0000_xor<0>11_INV_0 (receiver/COUNT_RECEIVED_add0000<0>)
+     LDCE:D                    0.308          receiver/COUNT_RECEIVED_0
+    ----------------------------------------
+    Total                      2.777ns (1.688ns logic, 1.089ns route)
+                                       (60.8% logic, 39.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'SENDER_BUFFER/shift_register_0/dff0/Q_not0001'
+  Total number of paths / destination ports: 24 / 8
+-------------------------------------------------------------------------
+Offset:              3.528ns (Levels of Logic = 2)
+  Source:            CLR (PAD)
+  Destination:       SENDER_BUFFER/shift_register_0/dff0/Q (LATCH)
+  Destination Clock: SENDER_BUFFER/shift_register_0/dff0/Q_not0001 falling
+
+  Data Path: CLR to SENDER_BUFFER/shift_register_0/dff0/Q
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            33   1.218   1.298  CLR_IBUF (CLR_IBUF)
+     LUT3:I2->O            1   0.704   0.000  SENDER_BUFFER/shift_register_1/dff3/Q_mux00001 (SENDER_BUFFER/shift_register_1/dff3/Q_mux0000)
+     LD:D                      0.308          SENDER_BUFFER/shift_register_1/dff3/Q
+    ----------------------------------------
+    Total                      3.528ns (2.230ns logic, 1.298ns route)
+                                       (63.2% logic, 36.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'sender/sender_shift_register/shift_register_0/dff0/Q_not0001'
+  Total number of paths / destination ports: 36 / 8
+-------------------------------------------------------------------------
+Offset:              5.891ns (Levels of Logic = 4)
+  Source:            CONTROL<5> (PAD)
+  Destination:       sender/sender_shift_register/shift_register_1/dff3/Q (LATCH)
+  Destination Clock: sender/sender_shift_register/shift_register_0/dff0/Q_not0001 falling
+
+  Data Path: CONTROL<5> to sender/sender_shift_register/shift_register_1/dff3/Q
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.218   0.666  CONTROL_5_IBUF (CONTROL_5_IBUF)
+     LUT2:I1->O            6   0.704   0.704  control/TE1 (TE)
+     LUT4:I2->O            7   0.704   0.883  sender/sender_shift_register/shift_register_1/dff0/Q_mux000011 (sender/sender_shift_register/shift_register_1/N01)
+     LUT4:I0->O            1   0.704   0.000  sender/sender_shift_register/shift_register_1/dff3/Q_mux00001 (sender/sender_shift_register/shift_register_1/dff3/Q_mux0000)
+     LD:D                      0.308          sender/sender_shift_register/shift_register_1/dff3/Q
+    ----------------------------------------
+    Total                      5.891ns (3.638ns logic, 2.253ns route)
+                                       (61.8% logic, 38.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001'
+  Total number of paths / destination ports: 33 / 8
+-------------------------------------------------------------------------
+Offset:              4.860ns (Levels of Logic = 4)
+  Source:            CLK (PAD)
+  Destination:       receiver/receiver_shift_register/shift_register_1/dff3/Q (LATCH)
+  Destination Clock: receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001 falling
+
+  Data Path: CLK to receiver/receiver_shift_register/shift_register_1/dff3/Q
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.218   0.706  CLK_IBUF (CLK_IBUF)
+     LUT4:I0->O            1   0.704   0.000  receiver/SHIFT_CLK12 (receiver/SHIFT_CLK1)
+     MUXF5:I1->O           9   0.321   0.899  receiver/SHIFT_CLK1_f5 (receiver/SHIFT_CLK)
+     LUT3:I1->O            1   0.704   0.000  receiver/receiver_shift_register/shift_register_1/dff3/Q_mux00001 (receiver/receiver_shift_register/shift_register_1/dff3/Q_mux0000)
+     LD:D                      0.308          receiver/receiver_shift_register/shift_register_1/dff3/Q
+    ----------------------------------------
+    Total                      4.860ns (3.255ns logic, 1.605ns route)
+                                       (67.0% logic, 33.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'sender/sender_shift_register/shift_register_0/dff0/Q_not0001'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              5.571ns (Levels of Logic = 2)
+  Source:            sender/sender_shift_register/shift_register_1/dff3/Q (LATCH)
+  Destination:       MOSI (PAD)
+  Source Clock:      sender/sender_shift_register/shift_register_0/dff0/Q_not0001 falling
+
+  Data Path: sender/sender_shift_register/shift_register_1/dff3/Q to MOSI
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.676   0.499  sender/sender_shift_register/shift_register_1/dff3/Q (sender/sender_shift_register/shift_register_1/dff3/Q)
+     LUT3:I1->O            1   0.704   0.420  sender/MOSI1 (MOSI_OBUF)
+     OBUF:I->O                 3.272          MOSI_OBUF (MOSI)
+    ----------------------------------------
+    Total                      5.571ns (4.652ns logic, 0.919ns route)
+                                       (83.5% logic, 16.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'READ'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              6.180ns (Levels of Logic = 2)
+  Source:            control/RECEIVER_READ (LATCH)
+  Destination:       OUTCOMING_DATA<7> (PAD)
+  Source Clock:      READ rising
+
+  Data Path: control/RECEIVER_READ to OUTCOMING_DATA<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD_1:G->Q            11   0.676   1.108  control/RECEIVER_READ (control/RECEIVER_READ)
+     LUT3:I0->O            1   0.704   0.420  RECEIVER_BUFFER/shift_register_1/dff3/Q_mux00001 (RECEIVER_BUFFER/shift_register_1/dff3/Q_mux0000)
+     OBUFT:I->O                3.272          OUTCOMING_DATA_0_OBUFT (OUTCOMING_DATA<0>)
+    ----------------------------------------
+    Total                      6.180ns (4.652ns logic, 1.528ns route)
+                                       (75.3% logic, 24.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              5.554ns (Levels of Logic = 2)
+  Source:            receiver/receiver_shift_register/shift_register_0/dff0/Q (LATCH)
+  Destination:       OUTCOMING_DATA<7> (PAD)
+  Source Clock:      receiver/receiver_shift_register/shift_register_0/dff0/Q_not0001 falling
+
+  Data Path: receiver/receiver_shift_register/shift_register_0/dff0/Q to OUTCOMING_DATA<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               2   0.676   0.482  receiver/receiver_shift_register/shift_register_0/dff0/Q (receiver/receiver_shift_register/shift_register_0/dff0/Q)
+     LUT3:I2->O            1   0.704   0.420  RECEIVER_BUFFER/shift_register_0/dff0/Q_mux00001 (RECEIVER_BUFFER/shift_register_0/dff0/Q_mux0000)
+     OBUFT:I->O                3.272          OUTCOMING_DATA_7_OBUFT (OUTCOMING_DATA<7>)
+    ----------------------------------------
+    Total                      5.554ns (4.652ns logic, 0.902ns route)
+                                       (83.8% logic, 16.2% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 18 / 9
+-------------------------------------------------------------------------
+Delay:               6.956ns (Levels of Logic = 3)
+  Source:            CLR (PAD)
+  Destination:       OUTCOMING_DATA<7> (PAD)
+
+  Data Path: CLR to OUTCOMING_DATA<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            33   1.218   1.342  CLR_IBUF (CLR_IBUF)
+     LUT3:I1->O            1   0.704   0.420  RECEIVER_BUFFER/shift_register_1/dff3/Q_mux00001 (RECEIVER_BUFFER/shift_register_1/dff3/Q_mux0000)
+     OBUFT:I->O                3.272          OUTCOMING_DATA_0_OBUFT (OUTCOMING_DATA<0>)
+    ----------------------------------------
+    Total                      6.956ns (5.194ns logic, 1.762ns route)
+                                       (74.7% logic, 25.3% route)
+
+=========================================================================
 
 
 Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.31 secs
+Total CPU time to Xst completion: 4.38 secs
  
 --> 
 
 
-Total memory usage is 518248 kilobytes
+Total memory usage is 526676 kilobytes
 
-Number of errors   :    8 (   0 filtered)
-Number of warnings :   64 (   0 filtered)
-Number of infos    :    2 (   0 filtered)
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   66 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
 
