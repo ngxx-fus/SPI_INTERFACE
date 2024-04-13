@@ -56,7 +56,7 @@ module RECEIVER (
     input RE,
     input MISO,
     input CLK,
-    output [7:0]DATA,
+    output [7:0] DATA,
     output FULL_STATE, 
     output EMPTY_STATE 
 );
@@ -91,5 +91,5 @@ module RECEIVER (
     assign HIGH = 1'b1;  
     assign EMPTY_STATE        = (COUNT_RECEIVED == 4'B0000)?(HIGH):(LOW);
     assign FULL_STATE         = (COUNT_RECEIVED == 4'B1000)?(HIGH):(LOW);
-    assign DATA               = (READ==1)?(P_DATA_OUT):(8'bzzzz_zzzz);
+    assign DATA               = (READ==1'b1)?(P_DATA_OUT):(8'bzzzz_zzzz);
 endmodule

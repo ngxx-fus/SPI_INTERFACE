@@ -3,26 +3,15 @@
 `include "status.v"
 
 module SPI_Interface(
-	//wishbone bus  = computer bus
-	//Wishbone to communicate with CPU/MCU
-	input MS_MODE, // mater or slave mode
+	input MS_MODE,
 	input CLK,
 	input CLR,
 	input READ,
 	input WRITE,
 	input [7:0] CONTROL,
-	// 0 : to interrupt receiving data when overwrite occured at RECEIVER 
-	// 1 : to interrupt receiving data when overwrite occured at SENDER
-	// 2 : revered
-	// 3 : to interrupt other block when sender is ready to transfer data
-	// 4 : to interrupt other block when receiver is ready to catch data
-	// 5 : to interrupt all block when neither transferring or receiving occurs overwrite error 
-	// 6 : revered
-	// 7 : maintaning the "connected-state", '0' logic level to establish the connection
 	output [7:0] STATUS,
-	input [7:0] INCOMING_DATA,
+	input  [7:0] INCOMING_DATA,
 	output [7:0] OUTCOMING_DATA,
-	//SPI to communicate with other SPI's devices
 	input MISO,
 	output MOSI,
 	inout CS,
@@ -79,7 +68,7 @@ module SPI_Interface(
 		.TE(TE),
 		.FULL_STATE(SENDER_REG_FULL),
 		.EMPTY_STATE(SENDER_EMPTY_STATE),
-		.DATA(P_DATA_IN),
+		.DATA(SENDER_BUFFER_DATA_O),
 		.MOSI(MOSI)
 	);
 	RECEIVER receiver(
@@ -89,7 +78,7 @@ module SPI_Interface(
 		.RE(RE),
 		.FULL_STATE(RECEIVER_FULL_STATE),
 		.EMPTY_STATE(RECEIVER_EMPTY_STATE),
-		.DATA(P_DATA_OUT),
+		.DATA(RECEIVER_BUFFER_DATA_O),
 		.MISO(MISO)
 	);
 	STATUS_COMBINATION status(
@@ -128,9 +117,8 @@ module SPI_Interface(
 		.RECEIVER_READ(RECEIVER_READ)
 	);
 
-	assign OUTCOMING_DATA = RECEIVER_BUFFER_DATA_O;
+	assign OUTCOMING_DATA = (READ==HIGH)?RECEIVER_BUFFER_DATA_O:8'hzz;
 	assign SENDER_BUFFER_DATA_I = INCOMING_DATA;
-
 	assign S_LCK = (MS_MODE == HIGH)?(CLK & (~CONTROL[7])):(S_CLK);
 
 	assign LOW = 1'b0;

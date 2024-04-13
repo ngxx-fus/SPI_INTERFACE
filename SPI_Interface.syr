@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> 
 Reading design: SPI_Interface.prj
@@ -158,13 +158,13 @@ Analyzing hierarchy for module <d_ff> in library <work>.
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing top module <SPI_Interface>.
-WARNING:Xst:852 - "SPI_Interface.v" line 58: Unconnected input port 'S_DATA_IN' of instance 'SENDER_BUFFER' is tied to GND.
-WARNING:Xst:852 - "SPI_Interface.v" line 67: Unconnected input port 'S_DATA_IN' of instance 'RECEIVER_BUFFER' is tied to GND.
-WARNING:Xst:852 - "SPI_Interface.v" line 95: Unconnected input port 'SENDER_BUFFER_FULL_STATE' of instance 'status' is tied to GND.
-WARNING:Xst:852 - "SPI_Interface.v" line 95: Unconnected input port 'RECEIVER_BUFFER_FULL_STATE' of instance 'status' is tied to GND.
-WARNING:Xst:852 - "SPI_Interface.v" line 95: Unconnected input port 'RECEIVER_READ' of instance 'status' is tied to GND.
-WARNING:Xst:852 - "SPI_Interface.v" line 109: Unconnected input port 'STATUS' of instance 'control' is tied to GND.
-WARNING:Xst:852 - "SPI_Interface.v" line 109: Unconnected input port 'MS_MODE' of instance 'control' is tied to GND.
+WARNING:Xst:852 - "SPI_Interface.v" line 47: Unconnected input port 'S_DATA_IN' of instance 'SENDER_BUFFER' is tied to GND.
+WARNING:Xst:852 - "SPI_Interface.v" line 56: Unconnected input port 'S_DATA_IN' of instance 'RECEIVER_BUFFER' is tied to GND.
+WARNING:Xst:852 - "SPI_Interface.v" line 84: Unconnected input port 'SENDER_BUFFER_FULL_STATE' of instance 'status' is tied to GND.
+WARNING:Xst:852 - "SPI_Interface.v" line 84: Unconnected input port 'RECEIVER_BUFFER_FULL_STATE' of instance 'status' is tied to GND.
+WARNING:Xst:852 - "SPI_Interface.v" line 84: Unconnected input port 'RECEIVER_READ' of instance 'status' is tied to GND.
+WARNING:Xst:852 - "SPI_Interface.v" line 98: Unconnected input port 'STATUS' of instance 'control' is tied to GND.
+WARNING:Xst:852 - "SPI_Interface.v" line 98: Unconnected input port 'MS_MODE' of instance 'control' is tied to GND.
 Module <SPI_Interface> is correct for synthesis.
  
 Analyzing module <SHIFT_REGISTER_8BIT> in library <work>.
@@ -174,10 +174,10 @@ Analyzing module <SHIFT_REGISTER_4BIT> in library <work>.
 Module <SHIFT_REGISTER_4BIT> is correct for synthesis.
  
 Analyzing module <d_ff> in library <work>.
-WARNING:Xst:916 - "d_ff.v" line 12: Delay is ignored for synthesis.
-WARNING:Xst:916 - "d_ff.v" line 14: Delay is ignored for synthesis.
+WARNING:Xst:916 - "d_ff.v" line 13: Delay is ignored for synthesis.
 WARNING:Xst:916 - "d_ff.v" line 15: Delay is ignored for synthesis.
-WARNING:Xst:905 - "d_ff.v" line 8: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:916 - "d_ff.v" line 16: Delay is ignored for synthesis.
+WARNING:Xst:905 - "d_ff.v" line 9: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <DATA>
 Module <d_ff> is correct for synthesis.
  
@@ -262,7 +262,7 @@ Unit <CONTROL_COMBINATION> synthesized.
 
 Synthesizing Unit <d_ff>.
     Related source file is "d_ff.v".
-WARNING:Xst:737 - Found 1-bit latch for signal <Q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <STORED_BIT>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 Unit <d_ff> synthesized.
 
@@ -307,11 +307,11 @@ WARNING:Xst:646 - Signal <S_LCK> is assigned but never used. This unconnected si
 WARNING:Xst:646 - Signal <SENDER_REG_FULL> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <SENDER_FULL_STATE> is used but never assigned. This sourceless signal will be automatically connected to value 0.
 WARNING:Xst:646 - Signal <SENDER_BUFFER_FULL_STATE> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <SENDER_BUFFER_DATA_O> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <RECEIVER_BUFFER_FULL_STATE> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <RECEIVER_BUFFER_DATA_I> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
-WARNING:Xst:646 - Signal <P_DATA_OUT> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:653 - Signal <P_DATA_IN> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+    Found 8-bit tristate buffer for signal <OUTCOMING_DATA>.
+    Summary:
+	inferred   8 Tristate(s).
 Unit <SPI_Interface> synthesized.
 
 
@@ -326,9 +326,9 @@ Macro Statistics
 # Latches                                              : 38
  1-bit latch                                           : 36
  4-bit latch                                           : 2
-# Tristates                                            : 9
+# Tristates                                            : 10
  1-bit tristate buffer                                 : 8
- 8-bit tristate buffer                                 : 1
+ 8-bit tristate buffer                                 : 2
 
 =========================================================================
 
@@ -336,28 +336,14 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1290 - Hierarchical block <SENDER_BUFFER> is unconnected in block <SPI_Interface>.
-   It will be removed from the design.
-WARNING:Xst:1290 - Hierarchical block <receiver> is unconnected in block <SPI_Interface>.
-   It will be removed from the design.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <Q>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <Q>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <Q>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <Q>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <Q>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <Q>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <Q>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <Q>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <Q>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <Q>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <Q>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <Q>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <Q>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <Q>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <Q>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <Q>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1290 - Hierarchical block <sender_shift_register> is unconnected in block <sender>.
-   It will be removed from the design.
+WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <STORED_BIT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <STORED_BIT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <STORED_BIT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <STORED_BIT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <STORED_BIT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <STORED_BIT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <STORED_BIT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <0> has a constant value of 0 in block <STORED_BIT>. This FF/Latch will be trimmed during the optimization process.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -374,162 +360,57 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:2677 - Node <control/SENDER_BUFFER_FULL_STATE> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <control/RECEIVER_BUFFER_FULL_STATE> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2042 - Unit RECEIVER: 8 internal tristates are replaced by logic (pull-up yes): DATA<0>, DATA<1>, DATA<2>, DATA<3>, DATA<4>, DATA<5>, DATA<6>, DATA<7>.
 
-Optimizing unit <SPI_Interface> ...
+ERROR:Xst:528 - Multi-source in Unit <SPI_Interface> on signal <RECEIVER_BUFFER_DATA_O<7>>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of LD instance <RECEIVER_BUFFER/shift_register_0/dff0/STORED_BIT/0>
+   Output signal of BUFT instance <receiver/DATA_P_DATA_OUT_7>
 
-Optimizing unit <SHIFT_REGISTER_4BIT> ...
+ERROR:Xst:528 - Multi-source in Unit <SPI_Interface> on signal <RECEIVER_BUFFER_DATA_O<6>>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of LD instance <RECEIVER_BUFFER/shift_register_0/dff1/STORED_BIT/0>
+   Output signal of BUFT instance <receiver/DATA_P_DATA_OUT_6>
 
-Optimizing unit <SENDER> ...
+ERROR:Xst:528 - Multi-source in Unit <SPI_Interface> on signal <RECEIVER_BUFFER_DATA_O<5>>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of LD instance <RECEIVER_BUFFER/shift_register_0/dff2/STORED_BIT/0>
+   Output signal of BUFT instance <receiver/DATA_P_DATA_OUT_5>
 
-Optimizing unit <RECEIVER> ...
-WARNING:Xst:1293 - FF/Latch <sender/sender_shift_register/shift_register_1/dff3/Q> has a constant value of 0 in block <SPI_Interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <sender/sender_shift_register/shift_register_1/dff2/Q> has a constant value of 0 in block <SPI_Interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <sender/sender_shift_register/shift_register_1/dff1/Q> has a constant value of 0 in block <SPI_Interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <sender/sender_shift_register/shift_register_1/dff0/Q> has a constant value of 0 in block <SPI_Interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <sender/sender_shift_register/shift_register_0/dff3/Q> has a constant value of 0 in block <SPI_Interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <sender/sender_shift_register/shift_register_0/dff2/Q> has a constant value of 0 in block <SPI_Interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <sender/sender_shift_register/shift_register_0/dff1/Q> has a constant value of 0 in block <SPI_Interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <sender/sender_shift_register/shift_register_0/dff0/Q> has a constant value of 0 in block <SPI_Interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RECEIVER_BUFFER/shift_register_0/dff0/Q> has a constant value of 0 in block <SPI_Interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RECEIVER_BUFFER/shift_register_0/dff1/Q> has a constant value of 0 in block <SPI_Interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RECEIVER_BUFFER/shift_register_0/dff2/Q> has a constant value of 0 in block <SPI_Interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RECEIVER_BUFFER/shift_register_0/dff3/Q> has a constant value of 0 in block <SPI_Interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RECEIVER_BUFFER/shift_register_1/dff0/Q> has a constant value of 0 in block <SPI_Interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RECEIVER_BUFFER/shift_register_1/dff1/Q> has a constant value of 0 in block <SPI_Interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RECEIVER_BUFFER/shift_register_1/dff2/Q> has a constant value of 0 in block <SPI_Interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RECEIVER_BUFFER/shift_register_1/dff3/Q> has a constant value of 0 in block <SPI_Interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <control/RECEIVER_READ> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <SENDER_BUFFER/shift_register_0/dff0/Q> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <SENDER_BUFFER/shift_register_0/dff1/Q> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <SENDER_BUFFER/shift_register_0/dff2/Q> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <SENDER_BUFFER/shift_register_0/dff3/Q> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <SENDER_BUFFER/shift_register_1/dff0/Q> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <SENDER_BUFFER/shift_register_1/dff1/Q> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <SENDER_BUFFER/shift_register_1/dff2/Q> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <SENDER_BUFFER/shift_register_1/dff3/Q> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <receiver/receiver_shift_register/shift_register_1/dff3/Q> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <receiver/receiver_shift_register/shift_register_1/dff2/Q> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <receiver/receiver_shift_register/shift_register_1/dff1/Q> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <receiver/receiver_shift_register/shift_register_1/dff0/Q> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <receiver/receiver_shift_register/shift_register_0/dff3/Q> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <receiver/receiver_shift_register/shift_register_0/dff2/Q> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <receiver/receiver_shift_register/shift_register_0/dff1/Q> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <receiver/receiver_shift_register/shift_register_0/dff0/Q> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <receiver/COUNT_RECEIVED_3> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <receiver/COUNT_RECEIVED_2> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <receiver/COUNT_RECEIVED_1> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <receiver/COUNT_RECEIVED_0> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <control/SENDER_WRITE> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <sender/COUNT_SENT_3> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <sender/COUNT_SENT_2> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <sender/COUNT_SENT_1> of sequential type is unconnected in block <SPI_Interface>.
-WARNING:Xst:2677 - Node <sender/COUNT_SENT_0> of sequential type is unconnected in block <SPI_Interface>.
+ERROR:Xst:528 - Multi-source in Unit <SPI_Interface> on signal <RECEIVER_BUFFER_DATA_O<4>>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of LD instance <RECEIVER_BUFFER/shift_register_0/dff3/STORED_BIT/0>
+   Output signal of BUFT instance <receiver/DATA_P_DATA_OUT_4>
 
-Mapping all equations...
-Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block SPI_Interface, actual ratio is 0.
+ERROR:Xst:528 - Multi-source in Unit <SPI_Interface> on signal <RECEIVER_BUFFER_DATA_O<3>>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of LD instance <RECEIVER_BUFFER/shift_register_1/dff0/STORED_BIT/0>
+   Output signal of BUFT instance <receiver/DATA_P_DATA_OUT_3>
 
-Final Macro Processing ...
+ERROR:Xst:528 - Multi-source in Unit <SPI_Interface> on signal <RECEIVER_BUFFER_DATA_O<2>>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of LD instance <RECEIVER_BUFFER/shift_register_1/dff1/STORED_BIT/0>
+   Output signal of BUFT instance <receiver/DATA_P_DATA_OUT_2>
 
-=========================================================================
-Final Register Report
+ERROR:Xst:528 - Multi-source in Unit <SPI_Interface> on signal <RECEIVER_BUFFER_DATA_O<1>>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of LD instance <RECEIVER_BUFFER/shift_register_1/dff2/STORED_BIT/0>
+   Output signal of BUFT instance <receiver/DATA_P_DATA_OUT_1>
 
-Found no macro
-=========================================================================
-
-=========================================================================
-*                           Partition Report                            *
-=========================================================================
-
-Partition Implementation Status
--------------------------------
-
-  No Partitions were found in this design.
-
--------------------------------
-
-=========================================================================
-*                            Final Report                               *
-=========================================================================
-Final Results
-RTL Top Level Output File Name     : SPI_Interface.ngr
-Top Level Output File Name         : SPI_Interface
-Output Format                      : NGC
-Optimization Goal                  : Speed
-Keep Hierarchy                     : No
-
-Design Statistics
-# IOs                              : 41
-
-Cell Usage :
-# BELS                             : 2
-#      GND                         : 1
-#      VCC                         : 1
-# IO Buffers                       : 17
-#      OBUF                        : 17
-=========================================================================
-
-Device utilization summary:
----------------------------
-
-Selected Device : 3s500efg320-4 
-
- Number of Slices:                        0  out of   4656     0%  
- Number of IOs:                          41
- Number of bonded IOBs:                  17  out of    232     7%  
-
----------------------------
-Partition Resource Summary:
----------------------------
-
-  No Partitions were found in this design.
-
----------------------------
+ERROR:Xst:528 - Multi-source in Unit <SPI_Interface> on signal <RECEIVER_BUFFER_DATA_O<0>>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of LD instance <RECEIVER_BUFFER/shift_register_1/dff3/STORED_BIT/0>
+   Output signal of BUFT instance <receiver/DATA_P_DATA_OUT_0>
 
 
-=========================================================================
-TIMING REPORT
-
-NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
-      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
-      GENERATED AFTER PLACE-and-ROUTE.
-
-Clock Information:
-------------------
-No clock signals found in this design
-
-Asynchronous Control Signals Information:
-----------------------------------------
-No asynchronous control signals found in this design
-
-Timing Summary:
----------------
-Speed Grade: -4
-
-   Minimum period: No path found
-   Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: No path found
-   Maximum combinational path delay: No path found
-
-Timing Detail:
---------------
-All values displayed in nanoseconds (ns)
-
-=========================================================================
-
-
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.90 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.31 secs
  
 --> 
 
 
-Total memory usage is 517428 kilobytes
+Total memory usage is 518248 kilobytes
 
-Number of errors   :    0 (   0 filtered)
-Number of warnings :  125 (   0 filtered)
+Number of errors   :    8 (   0 filtered)
+Number of warnings :   64 (   0 filtered)
 Number of infos    :    2 (   0 filtered)
 
