@@ -2,33 +2,33 @@
 
 module CONTROL_COMBINATION(
     //from wishbone:
-    input CLK,     //done
-    input CLR,     //done
-	 input [7:0] CONTROL, //done
-    input WRITE, //done
-    input READ, //done
-	 input [7:0] STATUS,//done
-    input MS_MODE,//done
+    input CLK,     
+    input CLR,     
+	 input [7:0] CONTROL, 
+    input WRITE, 
+    input READ, 
+	 input [7:0] STATUS,
+    input MS_MODE,
 
     //form BUFFER
-    output reg SENDER_BUFFER_FULL_STATE,//done
-    output SENDER_BUFFER_SH_LD,//done
-    output reg RECEIVER_BUFFER_FULL_STATE,//done
-    output RECEIVER_BUFFER_SH_LD,//done
+    output reg SENDER_BUFFER_FULL_STATE,
+    output SENDER_BUFFER_SH_LD,
+    output reg RECEIVER_BUFFER_FULL_STATE,
+    output RECEIVER_BUFFER_SH_LD,
 
     //sender:
-    input  SENDER_EMPTY_STATE,//done
-    output SENDER_CLK,//done
-    output SENDER_CLR,//done
-    output reg SENDER_WRITE,//done
-    output reg TE,//done
+    input  SENDER_EMPTY_STATE,
+    output SENDER_CLK,
+    output SENDER_CLR,
+    output reg SENDER_WRITE,
+    output reg TE,
 
     //receiver:
-    input  RECEIVER_FULL_STATE,//done
-    output RECEIVER_CLK,//done
-    output RECEIVER_CLR,//done
+    input  RECEIVER_FULL_STATE,
+    output RECEIVER_CLK,
+    output RECEIVER_CLR,
     output reg RE,
-    output reg RECEIVER_READ//done
+    output reg RECEIVER_READ
     //others:
 );
     wire HIGH, LOW;

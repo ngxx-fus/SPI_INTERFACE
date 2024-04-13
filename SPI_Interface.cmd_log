@@ -6,3 +6,4 @@ xst -intstyle ise -ifn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFA
 xst -intstyle ise -ifn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.xst" -ofn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.syr" 
 xst -intstyle ise -ifn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.xst" -ofn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.syr" 
 xst -intstyle ise -ifn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.xst" -ofn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.syr" 
+xst -intstyle ise -ifn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.xst" -ofn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.syr" 

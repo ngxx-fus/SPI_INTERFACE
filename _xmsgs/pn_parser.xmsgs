@@ -35,8 +35,5 @@
 </arg>
 </msg>
 
-<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/control.v&quot; into library work</arg>
-</msg>
-
 </messages>
 
