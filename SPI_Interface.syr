@@ -160,6 +160,9 @@ Analyzing hierarchy for module <d_ff> in library <work>.
 Analyzing top module <SPI_Interface>.
 WARNING:Xst:852 - "SPI_Interface.v" line 58: Unconnected input port 'S_DATA_IN' of instance 'SENDER_BUFFER' is tied to GND.
 WARNING:Xst:852 - "SPI_Interface.v" line 67: Unconnected input port 'S_DATA_IN' of instance 'RECEIVER_BUFFER' is tied to GND.
+WARNING:Xst:852 - "SPI_Interface.v" line 95: Unconnected input port 'SENDER_BUFFER_FULL_STATE' of instance 'status' is tied to GND.
+WARNING:Xst:852 - "SPI_Interface.v" line 95: Unconnected input port 'RECEIVER_BUFFER_FULL_STATE' of instance 'status' is tied to GND.
+WARNING:Xst:852 - "SPI_Interface.v" line 95: Unconnected input port 'RECEIVER_READ' of instance 'status' is tied to GND.
 WARNING:Xst:852 - "SPI_Interface.v" line 109: Unconnected input port 'STATUS' of instance 'control' is tied to GND.
 WARNING:Xst:852 - "SPI_Interface.v" line 109: Unconnected input port 'MS_MODE' of instance 'control' is tied to GND.
 Module <SPI_Interface> is correct for synthesis.
@@ -195,10 +198,10 @@ WARNING:Xst:905 - "sender_receiver.v" line 89: One or more signals are missing i
 Module <RECEIVER> is correct for synthesis.
  
 Analyzing module <STATUS_COMBINATION> in library <work>.
-WARNING:Xst:905 - "status.v" line 51: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:905 - "status.v" line 57: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <HIGH>, <LOW>
-WARNING:Xst:905 - "status.v" line 59: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-   <RECEIVER_REG_EMPTY>
+WARNING:Xst:905 - "status.v" line 65: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <RECEIVER_EMPTY_STATE>
 Module <STATUS_COMBINATION> is correct for synthesis.
  
 Analyzing module <CONTROL_COMBINATION> in library <work>.
@@ -230,7 +233,10 @@ Performing bidirectional port resolution...
 Synthesizing Unit <STATUS_COMBINATION>.
     Related source file is "status.v".
 WARNING:Xst:647 - Input <CLR> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <SENDER_REG_FULL> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <SENDER_FULL_STATE> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <RECEIVER_BUFFER_FULL_STATE> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <RECEIVER_READ> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <SENDER_BUFFER_FULL_STATE> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 2-bit register for signal <LOCAL_STATUS<3:2>>.
     Summary:
 	inferred   2 D-type flip-flop(s).
@@ -298,6 +304,8 @@ Synthesizing Unit <SPI_Interface>.
     Related source file is "SPI_Interface.v".
 WARNING:Xst:2565 - Inout <CS> is never assigned.
 WARNING:Xst:646 - Signal <S_LCK> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <SENDER_REG_FULL> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <SENDER_FULL_STATE> is used but never assigned. This sourceless signal will be automatically connected to value 0.
 WARNING:Xst:646 - Signal <SENDER_BUFFER_FULL_STATE> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <SENDER_BUFFER_DATA_O> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <RECEIVER_BUFFER_FULL_STATE> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
@@ -514,14 +522,14 @@ All values displayed in nanoseconds (ns)
 
 
 Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.47 secs
+Total CPU time to Xst completion: 3.90 secs
  
 --> 
 
 
-Total memory usage is 517412 kilobytes
+Total memory usage is 517428 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  117 (   0 filtered)
+Number of warnings :  125 (   0 filtered)
 Number of infos    :    2 (   0 filtered)
 

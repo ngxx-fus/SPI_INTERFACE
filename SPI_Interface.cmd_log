@@ -22,3 +22,13 @@ ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 SPI_Interfa
 map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o SPI_Interface_map.ncd SPI_Interface.ngd SPI_Interface.pcf 
 par -w -intstyle ise -ol high -t 1 SPI_Interface_map.ncd SPI_Interface.ncd SPI_Interface.pcf 
 trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SPI_Interface.twx SPI_Interface.ncd -o SPI_Interface.twr SPI_Interface.pcf 
+xst -intstyle ise -ifn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.xst" -ofn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.syr" 
+xst -intstyle ise -ifn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.xst" -ofn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.syr" 
+xst -intstyle ise -ifn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.xst" -ofn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.syr" 
+xst -intstyle ise -ifn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.xst" -ofn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.syr" 
+xst -intstyle ise -ifn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.xst" -ofn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.syr" 
+xst -intstyle ise -ifn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.xst" -ofn "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 SPI_Interface.ngc SPI_Interface.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o SPI_Interface_map.ncd SPI_Interface.ngd SPI_Interface.pcf 
+par -w -intstyle ise -ol high -t 1 SPI_Interface_map.ncd SPI_Interface.ncd SPI_Interface.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml SPI_Interface.twx SPI_Interface.ncd -o SPI_Interface.twr SPI_Interface.pcf 
