@@ -28,7 +28,8 @@ module SPI_Interface(
 	inout CS,
 	inout S_CLK
 );
-	
+	wire HIGH, LOW;
+
 	wire SENDER_CLK;
 	wire SENDER_CLR;
 	wire SENDER_WRITE;
@@ -53,7 +54,7 @@ module SPI_Interface(
 
 	//since the 8bit register is PIPO,
 	//so it can only FULL or EMPTY :v
-	reg SENDER_BUFFER_FULL_STATE;
+	wire SENDER_BUFFER_FULL_STATE;
 	SHIFT_REGISTER_8BIT SENDER_BUFFER(
 		.CLK(LOW),
 		.CLR(CLR),
@@ -62,7 +63,7 @@ module SPI_Interface(
 		.P_DATA_OUT(SENDER_BUFFER_DATA_O)
 	);
 
-	reg RECEIVER_BUFFER_FULL_STATE;	
+	wire RECEIVER_BUFFER_FULL_STATE;	
 	SHIFT_REGISTER_8BIT RECEIVER_BUFFER(
 		.CLK(LOW),
 		.CLR(CLR),
@@ -105,7 +106,7 @@ module SPI_Interface(
 		.STATUS(STATUS)
 	);
 	
-	STATUS_COMBINATION control(
+	CONTROL_COMBINATION control(
 		.CLK(CLK),
 		.CLR(CLR),
 		.CONTROL(CONTROL),
@@ -126,11 +127,6 @@ module SPI_Interface(
 		.RE(RE),
 		.RECEIVER_READ(RECEIVER_READ)
 	);
-
-	initial begin
-		RECEIVER_BUFFER_FULL_STATE = LOW;
-		RECEIVER_BUFFER_FULL_STATE =  LOW;
-	end
 
 	assign OUTCOMING_DATA = RECEIVER_BUFFER_DATA_O;
 	assign SENDER_BUFFER_DATA_I = INCOMING_DATA;

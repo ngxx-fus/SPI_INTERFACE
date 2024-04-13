@@ -5,61 +5,61 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 46: Procedural assignment to a non-register <arg fmt="%s" index="1">SENDER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
+<msg type="error" file="HDLCompiler" num="806" delta="unknown" >"control.v" Line 80: Syntax error near &quot;<arg fmt="%s" index="1">negedge</arg>&quot;.
 </msg>
 
-<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 46: Procedural assignment to a non-register <arg fmt="%s" index="1">SENDER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
+<msg type="error" file="HDLCompiler" num="806" delta="unknown" >"control.v" Line 82: Syntax error near &quot;<arg fmt="%s" index="1">else</arg>&quot;.
 </msg>
 
-<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 51: Procedural assignment to a non-register <arg fmt="%s" index="1">SENDER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
+<msg type="error" file="HDLCompiler" num="806" delta="unknown" >"control.v" Line 101: Syntax error near &quot;<arg fmt="%s" index="1">)</arg>&quot;.
 </msg>
 
-<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 51: Procedural assignment to a non-register <arg fmt="%s" index="1">SENDER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
+<msg type="error" file="HDLCompiler" num="806" delta="unknown" >"control.v" Line 103: Syntax error near &quot;<arg fmt="%s" index="1">else</arg>&quot;.
 </msg>
 
-<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 73: Procedural assignment to a non-register <arg fmt="%s" index="1">RECEIVER_BUFFER_SH_LD</arg> is not permitted, left-hand side should be reg/integer/time/genvar
+<msg type="error" file="HDLCompiler" num="69" delta="unknown" >"control.v" Line 44: &lt;<arg fmt="%s" index="1">SENDER_REG_FULL</arg>&gt; is not declared.
 </msg>
 
-<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 73: Procedural assignment to a non-register <arg fmt="%s" index="1">RECEIVER_BUFFER_SH_LD</arg> is not permitted, left-hand side should be reg/integer/time/genvar
+<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 48: Procedural assignment to a non-register <arg fmt="%s" index="1">SENDER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
 </msg>
 
-<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 74: Procedural assignment to a non-register <arg fmt="%s" index="1">RECEIVER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
+<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 48: Procedural assignment to a non-register <arg fmt="%s" index="1">SENDER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
 </msg>
 
-<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 74: Procedural assignment to a non-register <arg fmt="%s" index="1">RECEIVER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
+<msg type="error" file="HDLCompiler" num="69" delta="unknown" >"control.v" Line 52: &lt;<arg fmt="%s" index="1">SENDER_REG_FULL</arg>&gt; is not declared.
 </msg>
 
-<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 79: Procedural assignment to a non-register <arg fmt="%s" index="1">RECEIVER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
+<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 54: Procedural assignment to a non-register <arg fmt="%s" index="1">SENDER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
 </msg>
 
-<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 79: Procedural assignment to a non-register <arg fmt="%s" index="1">RECEIVER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
+<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 54: Procedural assignment to a non-register <arg fmt="%s" index="1">SENDER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
 </msg>
 
-<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 80: Procedural assignment to a non-register <arg fmt="%s" index="1">RECEIVER_BUFFER_SH_LD</arg> is not permitted, left-hand side should be reg/integer/time/genvar
+<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 59: Procedural assignment to a non-register <arg fmt="%s" index="1">SENDER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
 </msg>
 
-<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 80: Procedural assignment to a non-register <arg fmt="%s" index="1">RECEIVER_BUFFER_SH_LD</arg> is not permitted, left-hand side should be reg/integer/time/genvar
+<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 59: Procedural assignment to a non-register <arg fmt="%s" index="1">SENDER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
 </msg>
 
-<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 86: Procedural assignment to a non-register <arg fmt="%s" index="1">RECEIVER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
+<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 81: Procedural assignment to a non-register <arg fmt="%s" index="1">RECEIVER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
 </msg>
 
-<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 86: Procedural assignment to a non-register <arg fmt="%s" index="1">RECEIVER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
+<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 81: Procedural assignment to a non-register <arg fmt="%s" index="1">RECEIVER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
 </msg>
 
-<msg type="error" file="HDLCompiler" num="44" delta="unknown" >"control.v" Line 101: <arg fmt="%s" index="1">MS_MODE</arg> is not a constant
+<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 83: Procedural assignment to a non-register <arg fmt="%s" index="1">RECEIVER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
 </msg>
 
-<msg type="error" file="HDLCompiler" num="69" delta="unknown" >"control.v" Line 108: &lt;<arg fmt="%s" index="1">S_CLK</arg>&gt; is not declared.
+<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 83: Procedural assignment to a non-register <arg fmt="%s" index="1">RECEIVER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
 </msg>
 
-<msg type="error" file="HDLCompiler" num="598" delta="unknown" >"control.v" Line 1: Module &lt;<arg fmt="%s" index="1">CONTROL_COMBINATION</arg>&gt; ignored due to previous errors.
+<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 89: Procedural assignment to a non-register <arg fmt="%s" index="1">RECEIVER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
 </msg>
 
-<msg type="error" file="HDLCompiler" num="598" delta="unknown" >"status.v" Line 1: Module &lt;<arg fmt="%s" index="1">STATUS_COMBINATION</arg>&gt; ignored due to previous errors.
+<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 89: Procedural assignment to a non-register <arg fmt="%s" index="1">RECEIVER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
 </msg>
 
-<msg type="error" file="HDLCompiler" num="598" delta="unknown" >"/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface.v" Line 5: Module &lt;<arg fmt="%s" index="1">SPI_Interface</arg>&gt; ignored due to previous errors.
+<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"control.v" Line 94: Procedural assignment to a non-register <arg fmt="%s" index="1">RECEIVER_BUFFER_FULL_STATE</arg> is not permitted, left-hand side should be reg/integer/time/genvar
 </msg>
 
 </messages>

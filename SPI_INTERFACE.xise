@@ -16,8 +16,28 @@
 
   <files>
     <file xil_pn:name="SPI_Interface.v" xil_pn:type="FILE_VERILOG">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="2"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="1"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="1"/>
+    </file>
+    <file xil_pn:name="clk_generator.v" xil_pn:type="FILE_VERILOG">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="12"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="12"/>
+    </file>
+    <file xil_pn:name="control.v" xil_pn:type="FILE_VERILOG">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="13"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="13"/>
+    </file>
+    <file xil_pn:name="freq_devider.v" xil_pn:type="FILE_VERILOG">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="15"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="15"/>
+    </file>
+    <file xil_pn:name="sender_receiver.v" xil_pn:type="FILE_VERILOG">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="16"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="16"/>
+    </file>
+    <file xil_pn:name="status.v" xil_pn:type="FILE_VERILOG">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="19"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="19"/>
     </file>
   </files>
 
@@ -335,12 +355,9 @@
     <!-- Do not hand-edit this section, as it will be overwritten when the    -->
     <!-- project is analyzed based on files automatically identified as       -->
     <!-- include files.                                                       -->
-    <file xil_pn:name="sender_receiver.v" xil_pn:type="FILE_VERILOG"/>
-    <file xil_pn:name="shift_register_8bit.v" xil_pn:type="FILE_VERILOG"/>
-    <file xil_pn:name="shift_register_4bit.v" xil_pn:type="FILE_VERILOG"/>
     <file xil_pn:name="d_ff.v" xil_pn:type="FILE_VERILOG"/>
-    <file xil_pn:name="control.v" xil_pn:type="FILE_VERILOG"/>
-    <file xil_pn:name="status.v" xil_pn:type="FILE_VERILOG"/>
+    <file xil_pn:name="shift_register_4bit.v" xil_pn:type="FILE_VERILOG"/>
+    <file xil_pn:name="shift_register_8bit.v" xil_pn:type="FILE_VERILOG"/>
   </autoManagedFiles>
 
 </project>

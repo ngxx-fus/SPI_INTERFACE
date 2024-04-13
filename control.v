@@ -4,16 +4,16 @@ module CONTROL_COMBINATION(
     //from wishbone:
     input CLK,     //done
     input CLR,     //done
-	input [7:0] CONTROL, //done
+	 input [7:0] CONTROL, //done
     input WRITE, //done
     input READ, //done
-	input [7:0] STATUS,//done
+	 input [7:0] STATUS,//done
     input MS_MODE,//done
 
     //form BUFFER
-    inout  SENDER_BUFFER_FULL_STATE,//done
+    output reg SENDER_BUFFER_FULL_STATE,//done
     output SENDER_BUFFER_SH_LD,//done
-    inout  RECEIVER_BUFFER_FULL_STATE,//done
+    output reg RECEIVER_BUFFER_FULL_STATE,//done
     output RECEIVER_BUFFER_SH_LD,//done
 
     //sender:
@@ -31,9 +31,9 @@ module CONTROL_COMBINATION(
     output reg RECEIVER_READ//done
     //others:
 );
-    wire HIGH, LOw;
-	 wire LOCAL_CLK;
-	 reg SENDER_CLR_FROM_BUFFER;
+    wire HIGH, LOW;
+	wire LOCAL_CLK;
+	reg SENDER_CLR_FROM_BUFFER;
 
     initial begin
         TE = LOW;
@@ -41,7 +41,7 @@ module CONTROL_COMBINATION(
     end
     //sender - sender buffer
 	 
-    always @(WRITE, SENDER_REG_FULL) 
+    always @(WRITE, SENDER_EMPTY_STATE) 
     begin
         if(WRITE == HIGH)
         begin
@@ -49,7 +49,7 @@ module CONTROL_COMBINATION(
         end
         else
         begin
-            if(SENDER_REG_FULL == HIGH)
+            if(SENDER_EMPTY_STATE == HIGH)
             begin
                 #5 SENDER_BUFFER_FULL_STATE = LOW;
                 #5 SENDER_WRITE = HIGH;
@@ -62,14 +62,13 @@ module CONTROL_COMBINATION(
         end
     end
     //SENDER: INTERRUPT transfering :v 
-    always @(WRITE, STATUS[3],STATUS[7]) begin
+    always @(WRITE, STATUS[3],STATUS[7]) 
+    begin
         if( CONTROL[1] == 1 || CONTROL[5] == 1)
             TE = LOW;
         else
-            if(CLK) 
-                TE = ~WRITE;
-            else 
-                TE = TE;
+            TE = HIGH;
+
     end
 
     //receiver
@@ -77,7 +76,7 @@ module CONTROL_COMBINATION(
     begin
         if(READ == HIGH)
         begin
-            if(negedge READ) 
+            if(READ) 
                 RECEIVER_BUFFER_FULL_STATE = LOW;
             else 
                 RECEIVER_BUFFER_FULL_STATE = RECEIVER_BUFFER_FULL_STATE;
@@ -97,33 +96,21 @@ module CONTROL_COMBINATION(
         end
     end
 
-    always @(READ, STATUS[2],STATUS[7]) begin
-        if( CONTROL[0] == HIGH || CONTROL[4] == HIGH || )
-            TE = LOW;
+    always @(READ, STATUS[2],STATUS[7]) 
+    begin
+        if( CONTROL[0] == HIGH || CONTROL[5] == HIGH)
+            RE = LOW;
         else
-            if(CLK) 
-                TE = ~WRITE;
-            else 
-                TE = TE;
+            RE = HIGH;
     end
 
     //other (included both sender and receiver :v)
-    if( MS_MODE == HIGH) 
-    begin
-        assign LOCAL_CLK = CLK;
-        assign S_CLK = CLK;
-    end
-    else
-    begin
-        assign LOCAL_CLK = S_CLK;
-    end
-
+    assign S_CLK = (MS_MODE == HIGH)?(CLK):(1'bz);
+    assign LOCAL_CLK = (MS_MODE == HIGH)?(S_CLK):CLK;
     assign SENDER_CLK = LOCAL_CLK;
     assign SENDER_CLR = CLR | SENDER_CLR_FROM_BUFFER;
-
     assign RECEIVER_CLK = LOCAL_CLK;
     assign RECEIVER_CLR = CLR;
-
     assign SENDER_BUFFER_SH_LD = WRITE;
 
 	assign LOW = 1'b0;

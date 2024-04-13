@@ -42,13 +42,9 @@
     <transform xil_pn:end_ts="1712996601" xil_pn:in_ck="9183013297308040621" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1712996601">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputAdded"/>
       <outfile xil_pn:name="SPI_Interface.v"/>
-      <outfile xil_pn:name="control.v"/>
-      <outfile xil_pn:name="d_ff.v"/>
-      <outfile xil_pn:name="sender_receiver.v"/>
-      <outfile xil_pn:name="shift_register_4bit.v"/>
-      <outfile xil_pn:name="shift_register_8bit.v"/>
-      <outfile xil_pn:name="status.v"/>
     </transform>
     <transform xil_pn:end_ts="1712859655" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-7101553830711663277" xil_pn:start_ts="1712859655">
       <status xil_pn:value="SuccessfullyRun"/>
