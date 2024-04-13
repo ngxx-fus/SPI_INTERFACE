@@ -1,0 +1,25 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o /mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_/SPI_Interface_isim_beh.exe -prj /mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_/SPI_Interface_beh.prj work.SPI_Interface work.glbl 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_/SPI_Interface.v" into library work
+Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 82776 KB
+Fuse CPU Usage: 880 ms
+Compiling module d_ff
+Compiling module SHIFT_REGISTER_4BIT
+Compiling module SHIFT_REGISTER_8BIT
+Compiling module SENDER
+Compiling module RECEIVER
+Compiling module SPI_Interface
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 7 Verilog Units
+Built simulation executable /mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_/SPI_Interface_isim_beh.exe
+Fuse Memory Usage: 1167296 KB
+Fuse CPU Usage: 910 ms
+GCC CPU Usage: 1210 ms

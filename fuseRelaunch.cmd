@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_/SPI_Interface_isim_beh.exe" -prj "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_/SPI_Interface_beh.prj" "work.SPI_Interface" "work.glbl" 
