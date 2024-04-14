@@ -1,8 +1,8 @@
-MO RECEIVER NULL sender_receiver.v vlg61/_r_e_c_e_i_v_e_r.bin 1713072519
-MO SHIFT_REGISTER_8BIT NULL shift_register_8bit.v vlg10/_s_h_i_f_t___r_e_g_i_s_t_e_r__8_b_i_t.bin 1713072519
-MO d_ff NULL d_ff.v vlg7F/d__ff.bin 1713072519
-MO STATUS_COMBINATION NULL status.v vlg36/_s_t_a_t_u_s___c_o_m_b_i_n_a_t_i_o_n.bin 1713014994
-MO SPI_Interface NULL SPI_Interface.v vlg38/_s_p_i___interface.bin 1713014994
-MO SHIFT_REGISTER_4BIT NULL shift_register_4bit.v vlg1C/_s_h_i_f_t___r_e_g_i_s_t_e_r__4_b_i_t.bin 1713072519
-MO CONTROL_COMBINATION NULL control.v vlg57/_c_o_n_t_r_o_l___c_o_m_b_i_n_a_t_i_o_n.bin 1713014994
-MO SENDER NULL sender_receiver.v vlg09/_s_e_n_d_e_r.bin 1713072519
+MO RECEIVER NULL sender_receiver.v vlg61/_r_e_c_e_i_v_e_r.bin 1713098653
+MO SHIFT_REGISTER_8BIT NULL shift_register_8bit.v vlg10/_s_h_i_f_t___r_e_g_i_s_t_e_r__8_b_i_t.bin 1713098653
+MO d_ff NULL d_ff.v vlg7F/d__ff.bin 1713098653
+MO STATUS_COMBINATION NULL status.v vlg36/_s_t_a_t_u_s___c_o_m_b_i_n_a_t_i_o_n.bin 1713098653
+MO SPI_Interface NULL SPI_Interface.v vlg38/_s_p_i___interface.bin 1713098653
+MO SHIFT_REGISTER_4BIT NULL shift_register_4bit.v vlg1C/_s_h_i_f_t___r_e_g_i_s_t_e_r__4_b_i_t.bin 1713098653
+MO CONTROL_COMBINATION NULL control.v vlg57/_c_o_n_t_r_o_l___c_o_m_b_i_n_a_t_i_o_n.bin 1713098653
+MO SENDER NULL sender_receiver.v vlg09/_s_e_n_d_e_r.bin 1713098653

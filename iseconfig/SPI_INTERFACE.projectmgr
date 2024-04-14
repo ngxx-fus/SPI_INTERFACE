@@ -62,20 +62,25 @@
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/Automatic `includes</ClosedNode>
          <ClosedNode>/RECEIVER |mnt|sda1|DOC|23-24_HK02|ICSD|MIDTERM_PRJECT|SPI_INTERFACE|sender_receiver.v</ClosedNode>
          <ClosedNode>/SENDER |mnt|sda1|DOC|23-24_HK02|ICSD|MIDTERM_PRJECT|SPI_INTERFACE|sender_receiver.v</ClosedNode>
          <ClosedNode>/SHIFT_REGISTER_4BIT |mnt|sda1|DOC|23-24_HK02|ICSD|MIDTERM_PRJECT|SPI_INTERFACE|shift_register_4bit.v</ClosedNode>
          <ClosedNode>/SHIFT_REGISTER_8BIT |mnt|sda1|DOC|23-24_HK02|ICSD|MIDTERM_PRJECT|SPI_INTERFACE|shift_register_8bit.v</ClosedNode>
          <ClosedNode>/SPI_Interface |mnt|sda1|DOC|23-24_HK02|ICSD|MIDTERM_PRJECT|SPI_INTERFACE|SPI_Interface.v</ClosedNode>
+         <ClosedNode>/SPI_Interface |mnt|sda1|DOC|23-24_HK02|ICSD|MIDTERM_PRJECT|SPI_INTERFACE|SPI_Interface.v/RECEIVER_BUFFER - SHIFT_REGISTER_8BIT</ClosedNode>
+         <ClosedNode>/SPI_Interface |mnt|sda1|DOC|23-24_HK02|ICSD|MIDTERM_PRJECT|SPI_INTERFACE|SPI_Interface.v/SENDER_BUFFER - SHIFT_REGISTER_8BIT</ClosedNode>
+         <ClosedNode>/SPI_Interface |mnt|sda1|DOC|23-24_HK02|ICSD|MIDTERM_PRJECT|SPI_INTERFACE|SPI_Interface.v/receiver - RECEIVER</ClosedNode>
+         <ClosedNode>/SPI_Interface |mnt|sda1|DOC|23-24_HK02|ICSD|MIDTERM_PRJECT|SPI_INTERFACE|SPI_Interface.v/sender - SENDER</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem>xc3s500e-4fg320</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >3</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000108000000020000000000000000000000000200000064ffffffff000000810000000300000002000001080000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>xc3s500e-4fg320</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
