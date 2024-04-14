@@ -27,7 +27,7 @@ module STATUS_COMBINATION (
         LOCAL_STATUS = 8'h30;
     end
     //LOCAL_STATUS[2]
-    always @(posedge S_CLK)
+    always @(RECEIVER_FULL_STATE)
     begin
         if(RECEIVER_FULL_STATE == HIGH)
             LOCAL_STATUS[2] = HIGH;
@@ -35,7 +35,7 @@ module STATUS_COMBINATION (
             LOCAL_STATUS[2] = LOW;
     end
     // LOCAL_STATUS [3]
-    always @(posedge S_CLK)//RESET LOCAL_STATUS[3] when CLEAR 
+    always @(SENDER_EMPTY_STATE, SENDER_WRITE)//RESET LOCAL_STATUS[3] when CLEAR 
     begin   
 	    if (SENDER_EMPTY_STATE == LOW && SENDER_WRITE == HIGH)//SENDER_EMPTY_STATE <> HIGH & WRITE
             LOCAL_STATUS[3] = HIGH;
@@ -65,13 +65,12 @@ module STATUS_COMBINATION (
 	    LOCAL_STATUS [6] = ~RECEIVER_EMPTY_STATE  ;
     end
     // LOCAL_STATUS [7]
-    always @(posedge S_CLK)
+    always @(CONNECTION_FAILED_STATE)
     begin
 	    LOCAL_STATUS [7] = CONNECTION_FAILED_STATE;
     end
 	
     assign STATUS = LOCAL_STATUS;
-    // assign STATUS = 8'bzzzz_zzzz;
     assign HIGH = 1'b1;
     assign LOW  = 1'b0;
     assign HIGH_IMDEDANCE = 1'bz;
