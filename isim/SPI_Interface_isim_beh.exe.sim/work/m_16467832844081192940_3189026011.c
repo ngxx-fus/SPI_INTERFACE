@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_/shift_register_4bit.v";
+static const char *ng0 = "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/shift_register_4bit.v";
 
 
 

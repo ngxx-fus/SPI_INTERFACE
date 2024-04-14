@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_/sender_receiver.v";
+static const char *ng0 = "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/sender_receiver.v";
 static unsigned int ng1[] = {8U, 0U};
 static int ng2[] = {1, 0};
 static unsigned int ng3[] = {0U, 0U};
@@ -535,7 +535,7 @@ LAB4:    xsi_set_current_line(40, ng0);
         goto LAB5;
 
 LAB6:
-LAB7:    t38 = (t0 + 8832);
+LAB7:    t38 = (t0 + 8848);
     memset(t38, 0, 8);
     t39 = 1U;
     t40 = t39;
@@ -581,7 +581,7 @@ LAB5:    t18 = *((unsigned int *)t7);
     *((unsigned int *)t7) = (t37 & t33);
     goto LAB7;
 
-LAB8:    t48 = (t0 + 8832);
+LAB8:    t48 = (t0 + 8848);
     t49 = (t0 + 3368);
     xsi_vlogvar_assign_value(t49, t48, 0, 0, 1);
     goto LAB2;

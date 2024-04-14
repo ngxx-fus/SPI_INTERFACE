@@ -1,5 +1,5 @@
 ISim log file
-Running: /mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_/SPI_Interface_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_/SPI_Interface_isim_beh.wdb 
+Running: /mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/SPI_Interface_isim_beh.wdb 
 ISim P.20131013 (signature 0xfbc00daa)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.

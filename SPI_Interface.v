@@ -41,6 +41,8 @@ module SPI_Interface(
 	wire [7:0] RECEIVER_BUFFER_DATA_O;
 	wire       RECEIVER_BUFFER_SH_LD;
 
+	wire CONNECTION_FAILED_STATE;
+
 	//since the 8bit register is PIPO,
 	//so it can only FULL or EMPTY :v
 	wire SENDER_BUFFER_FULL_STATE;
@@ -92,7 +94,8 @@ module SPI_Interface(
 		//status of receiver
 		.RECEIVER_FULL_STATE(RECEIVER_FULL_STATE),
 		.RECEIVER_EMPTY_STATE(RECEIVER_EMPTY_STATE),
-		.STATUS(STATUS)
+		.STATUS(STATUS),
+		.CONNECTION_FAILED_STATE(CONNECTION_FAILED_STATE)
 	);
 	
 	CONTROL_COMBINATION control(
@@ -120,7 +123,9 @@ module SPI_Interface(
 	assign OUTCOMING_DATA = (READ==HIGH)?RECEIVER_BUFFER_DATA_O:8'hzz;
 	assign SENDER_BUFFER_DATA_I = INCOMING_DATA;
 	assign S_LCK = (MS_MODE == HIGH)?(CLK & (~CONTROL[7])):(S_CLK);
-
+	assign CONNECTION_FAILED_STATE = ((CS != 1 && CS!=0) 
+	                                ||(MISO != 1 && MISO!=0) 
+	                                ||(S_CLK != 1 && S_CLK!=0)  )?HIGH:LOW;
 	assign LOW = 1'b0;
 	assign HIGH = 1'b1;
 endmodule

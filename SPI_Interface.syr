@@ -158,13 +158,13 @@ Analyzing hierarchy for module <d_ff> in library <work>.
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing top module <SPI_Interface>.
-WARNING:Xst:852 - "SPI_Interface.v" line 47: Unconnected input port 'S_DATA_IN' of instance 'SENDER_BUFFER' is tied to GND.
-WARNING:Xst:852 - "SPI_Interface.v" line 56: Unconnected input port 'S_DATA_IN' of instance 'RECEIVER_BUFFER' is tied to GND.
-WARNING:Xst:852 - "SPI_Interface.v" line 84: Unconnected input port 'SENDER_BUFFER_FULL_STATE' of instance 'status' is tied to GND.
-WARNING:Xst:852 - "SPI_Interface.v" line 84: Unconnected input port 'RECEIVER_BUFFER_FULL_STATE' of instance 'status' is tied to GND.
-WARNING:Xst:852 - "SPI_Interface.v" line 84: Unconnected input port 'RECEIVER_READ' of instance 'status' is tied to GND.
-WARNING:Xst:852 - "SPI_Interface.v" line 98: Unconnected input port 'STATUS' of instance 'control' is tied to GND.
-WARNING:Xst:852 - "SPI_Interface.v" line 98: Unconnected input port 'MS_MODE' of instance 'control' is tied to GND.
+WARNING:Xst:852 - "SPI_Interface.v" line 49: Unconnected input port 'S_DATA_IN' of instance 'SENDER_BUFFER' is tied to GND.
+WARNING:Xst:852 - "SPI_Interface.v" line 58: Unconnected input port 'S_DATA_IN' of instance 'RECEIVER_BUFFER' is tied to GND.
+WARNING:Xst:852 - "SPI_Interface.v" line 86: Unconnected input port 'SENDER_BUFFER_FULL_STATE' of instance 'status' is tied to GND.
+WARNING:Xst:852 - "SPI_Interface.v" line 86: Unconnected input port 'RECEIVER_BUFFER_FULL_STATE' of instance 'status' is tied to GND.
+WARNING:Xst:852 - "SPI_Interface.v" line 86: Unconnected input port 'RECEIVER_READ' of instance 'status' is tied to GND.
+WARNING:Xst:852 - "SPI_Interface.v" line 101: Unconnected input port 'STATUS' of instance 'control' is tied to GND.
+WARNING:Xst:852 - "SPI_Interface.v" line 101: Unconnected input port 'MS_MODE' of instance 'control' is tied to GND.
 Module <SPI_Interface> is correct for synthesis.
  
 Analyzing module <SHIFT_REGISTER_8BIT> in library <work>.
@@ -198,9 +198,9 @@ WARNING:Xst:905 - "sender_receiver.v" line 89: One or more signals are missing i
 Module <RECEIVER> is correct for synthesis.
  
 Analyzing module <STATUS_COMBINATION> in library <work>.
-WARNING:Xst:905 - "status.v" line 54: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:905 - "status.v" line 56: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <HIGH>, <LOW>
-WARNING:Xst:905 - "status.v" line 62: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:905 - "status.v" line 64: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <RECEIVER_EMPTY_STATE>
 Module <STATUS_COMBINATION> is correct for synthesis.
  
@@ -237,6 +237,8 @@ WARNING:Xst:647 - Input <SENDER_FULL_STATE> is never used. This port will be pre
 WARNING:Xst:647 - Input <RECEIVER_BUFFER_FULL_STATE> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <RECEIVER_READ> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <SENDER_BUFFER_FULL_STATE> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <CONNECTION_FAILED_STATE> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <HIGH_IMDEDANCE> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found 2-bit register for signal <LOCAL_STATUS<3:2>>.
     Summary:
 	inferred   2 D-type flip-flop(s).
@@ -733,15 +735,15 @@ Delay:               6.956ns (Levels of Logic = 3)
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.38 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.41 secs
  
 --> 
 
 
-Total memory usage is 526676 kilobytes
+Total memory usage is 526772 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   66 (   0 filtered)
+Number of warnings :   68 (   0 filtered)
 Number of infos    :    3 (   0 filtered)
 

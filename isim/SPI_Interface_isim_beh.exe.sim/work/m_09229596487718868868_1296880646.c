@@ -21,13 +21,12 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_/sender_receiver.v";
+static const char *ng0 = "/mnt/sda1/DOC/23-24_HK02/ICSD/MIDTERM_PRJECT/SPI_INTERFACE/sender_receiver.v";
 static int ng1[] = {0, 0};
 static unsigned int ng2[] = {0U, 0U};
 static unsigned int ng3[] = {1U, 0U};
 static unsigned int ng4[] = {8U, 0U};
-static int ng5[] = {1, 0};
-static unsigned int ng6[] = {0U, 255U};
+static unsigned int ng5[] = {0U, 255U};
 
 
 
@@ -891,7 +890,7 @@ LAB21:    t106 = *((unsigned int *)t89);
         goto LAB23;
 
 LAB24:
-LAB25:    t140 = (t0 + 8816);
+LAB25:    t140 = (t0 + 8832);
     memset(t140, 0, 8);
     t141 = 1U;
     t142 = t141;
@@ -1013,7 +1012,7 @@ LAB23:    t120 = *((unsigned int *)t108);
     *((unsigned int *)t108) = (t139 & t135);
     goto LAB25;
 
-LAB26:    t150 = (t0 + 8816);
+LAB26:    t150 = (t0 + 8832);
     t151 = (t0 + 3368);
     xsi_vlogvar_assign_value(t151, t150, 0, 0, 1);
     goto LAB2;
@@ -1543,7 +1542,7 @@ LAB3:    goto *t2;
 LAB2:    xsi_set_current_line(94, ng0);
     t2 = (t0 + 1208U);
     t5 = *((char **)t2);
-    t2 = ((char*)((ng5)));
+    t2 = ((char*)((ng3)));
     memset(t6, 0, 8);
     t7 = (t5 + 4);
     t8 = (t2 + 4);
@@ -1642,7 +1641,7 @@ LAB12:    t33 = (t0 + 2648U);
     t34 = *((char **)t33);
     goto LAB13;
 
-LAB14:    t33 = ((char*)((ng6)));
+LAB14:    t33 = ((char*)((ng5)));
     goto LAB15;
 
 LAB16:    xsi_vlog_unsigned_bit_combine(t3, 8, t34, 8, t33, 8);
@@ -1678,7 +1677,7 @@ LAB0:    t1 = (t0 + 6264U);
 
 LAB3:    goto *t2;
 
-LAB2:    t2 = ((char*)((ng6)));
+LAB2:    t2 = ((char*)((ng5)));
     t3 = (t0 + 7048);
     t4 = (t3 + 56U);
     t5 = *((char **)t4);

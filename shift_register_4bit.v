@@ -5,7 +5,7 @@ module SHIFT_REGISTER_4BIT (
     input CLR,
     input [3:0] P_DATA_IN,
     input S_DATA_IN,
-    input SH_LD,
+    input SH_LD,//load = ?
     output  [3:0] P_DATA_OUT
 );
     wire notSH_LD;

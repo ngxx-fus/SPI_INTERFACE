@@ -12,11 +12,13 @@ module STATUS_COMBINATION (
     input S_CLK,
     input CLR,
     
+    input CONNECTION_FAILED_STATE,
+
     output [7:0]STATUS
 );
     //TODO: làm cái bảng này như trong bảng trong sách 
     reg [7:0] LOCAL_STATUS ;
-    wire HIGH, LOW;
+    wire HIGH, LOW, HIGH_IMDEDANCE;
     initial begin
         LOCAL_STATUS = 8'h30;
     end
@@ -67,4 +69,5 @@ module STATUS_COMBINATION (
     // assign STATUS = 8'bzzzz_zzzz;
     assign HIGH = 1'b1;
     assign LOW  = 1'b0;
+    assign HIGH_IMDEDANCE = 1'bz;
 endmodule
