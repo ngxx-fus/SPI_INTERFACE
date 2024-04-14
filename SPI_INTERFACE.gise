@@ -85,6 +85,10 @@
     <transform xil_pn:end_ts="1713012499" xil_pn:in_ck="2612382514346122181" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1713012499">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="SPI_Interface.v"/>
       <outfile xil_pn:name="clk_generator.v"/>
       <outfile xil_pn:name="control.v"/>
@@ -110,6 +114,9 @@
     <transform xil_pn:end_ts="1713012499" xil_pn:in_ck="2612382514346122181" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1713012499">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="SPI_Interface.v"/>
       <outfile xil_pn:name="clk_generator.v"/>
       <outfile xil_pn:name="control.v"/>
@@ -123,7 +130,10 @@
     <transform xil_pn:end_ts="1713012501" xil_pn:in_ck="2612382514346122181" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="7689910102653196231" xil_pn:start_ts="1713012499">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="SPI_Interface_beh.prj"/>
       <outfile xil_pn:name="SPI_Interface_isim_beh.exe"/>
@@ -135,6 +145,7 @@
     <transform xil_pn:end_ts="1713012502" xil_pn:in_ck="-6721936386061239733" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="5044951596227931306" xil_pn:start_ts="1713012501">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="SPI_Interface_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
@@ -171,7 +182,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="SPI_Interface.lso"/>
       <outfile xil_pn:name="SPI_Interface.ngc"/>
@@ -194,6 +207,7 @@
     <transform xil_pn:end_ts="1713012363" xil_pn:in_ck="-4916954539423127102" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-4067397948099051170" xil_pn:start_ts="1713012359">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="SPI_Interface.bld"/>
       <outfile xil_pn:name="SPI_Interface.ngd"/>
       <outfile xil_pn:name="SPI_Interface_ngdbuild.xrpt"/>
@@ -204,6 +218,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="SPI_Interface.pcf"/>
       <outfile xil_pn:name="SPI_Interface_map.map"/>
       <outfile xil_pn:name="SPI_Interface_map.mrp"/>
@@ -218,6 +233,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="SPI_Interface.ncd"/>
       <outfile xil_pn:name="SPI_Interface.pad"/>
       <outfile xil_pn:name="SPI_Interface.par"/>
@@ -232,6 +248,7 @@
     <transform xil_pn:end_ts="1713012382" xil_pn:in_ck="-4916954539423127233" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1713012379">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="SPI_Interface.twr"/>
       <outfile xil_pn:name="SPI_Interface.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>

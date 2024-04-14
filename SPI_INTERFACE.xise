@@ -343,11 +343,11 @@
     <!-- Do not hand-edit this section, as it will be overwritten when the    -->
     <!-- project is analyzed based on files automatically identified as       -->
     <!-- include files.                                                       -->
-    <file xil_pn:name="control.v" xil_pn:type="FILE_VERILOG"/>
-    <file xil_pn:name="d_ff.v" xil_pn:type="FILE_VERILOG"/>
     <file xil_pn:name="sender_receiver.v" xil_pn:type="FILE_VERILOG"/>
-    <file xil_pn:name="shift_register_4bit.v" xil_pn:type="FILE_VERILOG"/>
     <file xil_pn:name="shift_register_8bit.v" xil_pn:type="FILE_VERILOG"/>
+    <file xil_pn:name="shift_register_4bit.v" xil_pn:type="FILE_VERILOG"/>
+    <file xil_pn:name="d_ff.v" xil_pn:type="FILE_VERILOG"/>
+    <file xil_pn:name="control.v" xil_pn:type="FILE_VERILOG"/>
     <file xil_pn:name="status.v" xil_pn:type="FILE_VERILOG"/>
   </autoManagedFiles>
 
