@@ -64,7 +64,12 @@ module STATUS_COMBINATION (
     begin
 	    LOCAL_STATUS [6] = ~RECEIVER_EMPTY_STATE  ;
     end
-
+    // LOCAL_STATUS [7]
+    always @(posedge S_CLK)
+    begin
+	    LOCAL_STATUS [7] = CONNECTION_FAILED_STATE;
+    end
+	
     assign STATUS = LOCAL_STATUS;
     // assign STATUS = 8'bzzzz_zzzz;
     assign HIGH = 1'b1;
