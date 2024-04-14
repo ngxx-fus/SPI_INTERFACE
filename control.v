@@ -52,7 +52,8 @@ module CONTROL_COMBINATION(
             if(SENDER_EMPTY_STATE == HIGH)
             begin
                 #5 SENDER_BUFFER_FULL_STATE = LOW;
-                #5 SENDER_WRITE = HIGH #;
+                   SENDER_WRITE = HIGH;
+                #30;
             end
             else
             begin
@@ -86,7 +87,8 @@ module CONTROL_COMBINATION(
             if(RECEIVER_FULL_STATE == HIGH)
             begin
                 #5 RECEIVER_BUFFER_FULL_STATE = HIGH;
-                #5 RECEIVER_READ = HIGH #30;
+                   RECEIVER_READ = HIGH;
+                #30;
             end
             else
             begin
