@@ -169,11 +169,10 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1713072766" xil_pn:in_ck="1158920246532619704" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-8970502079103157042" xil_pn:start_ts="1713072759">
+    <transform xil_pn:end_ts="1713098656" xil_pn:in_ck="2612382514346122181" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-8970502079103157042" xil_pn:start_ts="1713098650">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="SPI_Interface.lso"/>
@@ -194,21 +193,21 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1713072771" xil_pn:in_ck="-4916954539423127102" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-4067397948099051170" xil_pn:start_ts="1713072766">
+    <transform xil_pn:end_ts="1713098660" xil_pn:in_ck="-4916954539423127102" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-4067397948099051170" xil_pn:start_ts="1713098656">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="SPI_Interface.bld"/>
       <outfile xil_pn:name="SPI_Interface.ngd"/>
       <outfile xil_pn:name="SPI_Interface_ngdbuild.xrpt"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1713072775" xil_pn:in_ck="-4916954539423127101" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="-5849673150125579957" xil_pn:start_ts="1713072771">
+    <transform xil_pn:end_ts="1713098664" xil_pn:in_ck="-4916954539423127101" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="-5849673150125579957" xil_pn:start_ts="1713098660">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="SPI_Interface.pcf"/>
       <outfile xil_pn:name="SPI_Interface_map.map"/>
       <outfile xil_pn:name="SPI_Interface_map.mrp"/>
@@ -219,11 +218,10 @@
       <outfile xil_pn:name="SPI_Interface_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1713072789" xil_pn:in_ck="6837818904001815132" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="-5563652517805085498" xil_pn:start_ts="1713072775">
+    <transform xil_pn:end_ts="1713098677" xil_pn:in_ck="6837818904001815132" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="-5563652517805085498" xil_pn:start_ts="1713098664">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="SPI_Interface.ncd"/>
       <outfile xil_pn:name="SPI_Interface.pad"/>
       <outfile xil_pn:name="SPI_Interface.par"/>
@@ -235,10 +233,9 @@
       <outfile xil_pn:name="SPI_Interface_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1713072789" xil_pn:in_ck="-4916954539423127233" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1713072786">
+    <transform xil_pn:end_ts="1713098677" xil_pn:in_ck="-4916954539423127233" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1713098675">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="SPI_Interface.twr"/>
       <outfile xil_pn:name="SPI_Interface.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
