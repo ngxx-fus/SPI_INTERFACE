@@ -8,7 +8,7 @@ module SPI_Interface(
 	input CLR,
 	input READ,
 	input WRITE,
-	input [7:0] CONTROL,
+	input  [7:0] CONTROL,
 	output [7:0] STATUS,
 	input  [7:0] INCOMING_DATA,
 	output [7:0] OUTCOMING_DATA,
@@ -19,6 +19,7 @@ module SPI_Interface(
 );
 	wire HIGH, LOW;
 
+	wire LOCAL_CLK;
 	wire SENDER_CLK;
 	wire SENDER_CLR;
 	wire SENDER_WRITE;
@@ -42,6 +43,7 @@ module SPI_Interface(
 	wire       RECEIVER_BUFFER_SH_LD;
 
 	wire CONNECTION_FAILED_STATE;
+	wire CS_CONTROL;
 
 	//since the 8bit register is PIPO,
 	//so it can only FULL or EMPTY :v
@@ -68,7 +70,7 @@ module SPI_Interface(
 		.CLR(SENDER_CLR),
 		.WRITE(SENDER_WRITE),
 		.TE(TE),
-		.FULL_STATE(SENDER_REG_FULL),
+		.FULL_STATE(SENDER_FULL_STATE),
 		.EMPTY_STATE(SENDER_EMPTY_STATE),
 		.DATA(SENDER_BUFFER_DATA_O),
 		.MOSI(MOSI)
@@ -88,6 +90,11 @@ module SPI_Interface(
 		.S_CLK(S_CLK),
 		.CLR(CLR),
 		.SENDER_WRITE(SENDER_WRITE),
+		//buffer
+		.SENDER_BUFFER_SH_LD(SENDER_BUFFER_SH_LD),
+		.SENDER_BUFFER_FULL_STATE(SENDER_BUFFER_FULL_STATE),
+		.RECEIVER_BUFFER_SH_LD(RECEIVER_BUFFER_SH_LD),
+		.RECEIVER_BUFFER_FULL_STATE(RECEIVER_BUFFER_FULL_STATE),
 		//status of sender
 		.SENDER_FULL_STATE(SENDER_FULL_STATE),
 		.SENDER_EMPTY_STATE(SENDER_EMPTY_STATE),
@@ -99,7 +106,8 @@ module SPI_Interface(
 	);
 	
 	CONTROL_COMBINATION control(
-		.CLK(CLK),
+		.MS_MODE(MS_MODE),
+		.CLK(LOCAL_CLK),
 		.CLR(CLR),
 		.CONTROL(CONTROL),
 		.WRITE(WRITE),
@@ -110,22 +118,27 @@ module SPI_Interface(
 		.RECEIVER_BUFFER_SH_LD(RECEIVER_BUFFER_SH_LD),
 		.SENDER_CLK(SENDER_CLK),
 		.SENDER_CLR(SENDER_CLR),
+		.SENDER_FULL_STATE(SENDER_FULL_STATE),
 		.SENDER_EMPTY_STATE(SENDER_EMPTY_STATE),
 		.SENDER_WRITE(SENDER_WRITE),
 		.TE(TE),
 		.RECEIVER_CLK(RECEIVER_CLK),
 		.RECEIVER_CLR(RECEIVER_CLR),
 		.RECEIVER_FULL_STATE(RECEIVER_FULL_STATE),
+		.RECEIVER_EMPTY_STATE(RECEIVER_EMPTY_STATE),
 		.RE(RE),
-		.RECEIVER_READ(RECEIVER_READ)
+		.RECEIVER_READ(RECEIVER_READ),
+		.CS(CS_CONTROL)
 	);
 
+	assign LOCAL_CLK = (MS_MODE==HIGH)?(CLK):(S_CLK);
+	assign S_CLK = (MS_MODE == HIGH)?(CLK & (~CS)):(1'bz);
 	assign OUTCOMING_DATA = (READ==HIGH)?RECEIVER_BUFFER_DATA_O:8'hzz;
 	assign SENDER_BUFFER_DATA_I = INCOMING_DATA;
-	assign S_LCK = (MS_MODE == HIGH)?(CLK & (~CONTROL[7])):(S_CLK);
 	assign CONNECTION_FAILED_STATE = ((CS != 1 && CS!=0) 
 	                                ||(MISO != 1 && MISO!=0) 
 	                                ||(S_CLK != 1 && S_CLK!=0)  )?HIGH:LOW;
+	assign CS = (MS_MODE==HIGH)?(CS_CONTROL):1'bz;
 	assign LOW = 1'b0;
 	assign HIGH = 1'b1;
 endmodule

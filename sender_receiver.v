@@ -32,10 +32,10 @@ module SENDER (
     always @(SHIFT_CLK, CLR, WRITE)
         if(CLR == 1)
             COUNT_SENT = 4'b1000;
-        else if(WRITE == 1)
-				 COUNT_SENT = 4'b0000;
+        else if(WRITE == HIGH)
+				 COUNT_SENT = 4'h0;
 				 else if(TE == HIGH && EMPTY_STATE == LOW)
-                  COUNT_SENT = COUNT_SENT + 1;
+                      COUNT_SENT = COUNT_SENT + 4'h1;
     always @(CLK)
         SHIFT_CLK = #5 CLK & TE;
 
