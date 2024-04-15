@@ -52,29 +52,21 @@ module STATUS_COMBINATION (
         else
             LOCAL_STATUS[3] = LOW;
     end
-
     //  LOCAL_STATUS[4]
-    //  SENDER_EMPTY_STATE
     always @ (SENDER_EMPTY_STATE)
     begin
          LOCAL_STATUS [4] = SENDER_EMPTY_STATE;
     end
     //  LOCAL_STATUS[5]
-    always @ (SENDER_EMPTY_STATE)
-    begin
-        if (SENDER_EMPTY_STATE == HIGH)
-            LOCAL_STATUS [5] = HIGH;
-        else
-            LOCAL_STATUS [5] = LOW;
+    always @ (SENDER_BUFFER_FULL_STATE) begin
+        LOCAL_STATUS [5] = ~SENDER_BUFFER_FULL_STATE;
     end
     //  LOCAL_STATUS[6]
-    always @ (RECEIVER_FULL_STATE)
-    begin
-	    LOCAL_STATUS [6] = ~RECEIVER_EMPTY_STATE  ;
+    always @ (RECEIVER_BUFFER_FULL_STATE) begin
+	    LOCAL_STATUS [6] = RECEIVER_BUFFER_FULL_STATE  ;
     end
     // LOCAL_STATUS [7]
-    always @(CONNECTION_FAILED_STATE)
-    begin
+    always @(CONNECTION_FAILED_STATE)begin
 	    LOCAL_STATUS [7] = CONNECTION_FAILED_STATE;
     end
 	

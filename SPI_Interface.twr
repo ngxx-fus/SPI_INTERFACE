@@ -45,23 +45,15 @@ Setup/Hold to clock CLK
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-MISO        |   -1.663(R)|    3.177(R)|receiver/SHIFT_CLK|   0.000|
+MISO        |   -1.706(R)|    3.514(R)|receiver/SHIFT_CLK|   0.000|
 ------------+------------+------------+------------------+--------+
 
-Setup/Hold to clock CONTROL<0>
+Setup/Hold to clock CONTROL<6>
 ------------+------------+------------+------------------+--------+
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-MISO        |   -1.406(R)|    2.856(R)|receiver/SHIFT_CLK|   0.000|
-------------+------------+------------+------------------+--------+
-
-Setup/Hold to clock CONTROL<5>
-------------+------------+------------+------------------+--------+
-            |Max Setup to|Max Hold to |                  | Clock  |
-Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
-------------+------------+------------+------------------+--------+
-MISO        |   -1.512(R)|    2.989(R)|receiver/SHIFT_CLK|   0.000|
+MISO        |   -1.845(R)|    3.687(R)|receiver/SHIFT_CLK|   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock CLK to Pad
@@ -69,23 +61,15 @@ Clock CLK to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-MOSI        |   11.414(R)|sender/SHIFT_CLK  |   0.000|
+MOSI        |   11.763(R)|sender/SHIFT_CLK  |   0.000|
 ------------+------------+------------------+--------+
 
-Clock CONTROL<1> to Pad
+Clock CONTROL<2> to Pad
 ------------+------------+------------------+--------+
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-MOSI        |   11.325(R)|sender/SHIFT_CLK  |   0.000|
-------------+------------+------------------+--------+
-
-Clock CONTROL<5> to Pad
-------------+------------+------------------+--------+
-            | clk (edge) |                  | Clock  |
-Destination |   to PAD   |Internal Clock(s) | Phase  |
-------------+------------+------------------+--------+
-MOSI        |   12.323(R)|sender/SHIFT_CLK  |   0.000|
+MOSI        |   11.635(R)|sender/SHIFT_CLK  |   0.000|
 ------------+------------+------------------+--------+
 
 Clock to Setup on destination clock CLK
@@ -93,43 +77,28 @@ Clock to Setup on destination clock CLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK            |    1.941|         |         |         |
-CONTROL<0>     |    1.939|         |         |         |
-CONTROL<1>     |    1.941|         |         |         |
-CONTROL<5>     |    1.941|         |         |         |
+CLK            |    1.890|         |         |         |
+CONTROL<2>     |    1.890|         |         |         |
+CONTROL<6>     |    1.811|         |         |         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock CONTROL<0>
+Clock to Setup on destination clock CONTROL<2>
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK            |    1.939|         |         |         |
-CONTROL<0>     |    1.939|         |         |    2.520|
-CONTROL<5>     |    1.939|         |         |    2.520|
-READ           |         |         |    2.559|         |
+CLK            |    1.890|         |         |         |
+CONTROL<2>     |    1.890|         |         |    3.193|
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock CONTROL<1>
+Clock to Setup on destination clock CONTROL<6>
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK            |    1.941|         |         |         |
-CONTROL<1>     |    1.941|         |         |    3.336|
-CONTROL<5>     |    1.941|         |         |    3.336|
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock CONTROL<5>
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-CLK            |    1.941|         |         |         |
-CONTROL<0>     |    1.939|         |         |    2.520|
-CONTROL<1>     |    1.941|         |         |    3.336|
-CONTROL<5>     |    1.941|         |         |    3.336|
-READ           |         |         |    2.559|         |
+CLK            |    1.811|         |         |         |
+CONTROL<6>     |    1.811|         |         |    2.227|
+READ           |         |         |    2.304|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock READ
@@ -137,8 +106,7 @@ Clock to Setup on destination clock READ
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CONTROL<0>     |         |    4.582|         |         |
-CONTROL<5>     |         |    4.582|         |         |
+CONTROL<6>     |         |    4.291|         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock WRITE
@@ -146,28 +114,26 @@ Clock to Setup on destination clock WRITE
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CONTROL<1>     |         |    4.504|         |         |
-CONTROL<5>     |         |    4.504|         |         |
+CONTROL<2>     |         |    2.301|         |         |
 ---------------+---------+---------+---------+---------+
 
 Pad to Pad
 ---------------+-----------------+---------+
 Source Pad     |Destination Pad  |  Delay  |
 ---------------+-----------------+---------+
-CONTROL<1>     |MOSI             |    6.255|
-CONTROL<5>     |MOSI             |    6.518|
-READ           |OUTCOMING_DATA<0>|    7.776|
-READ           |OUTCOMING_DATA<1>|    7.773|
-READ           |OUTCOMING_DATA<2>|    8.028|
-READ           |OUTCOMING_DATA<3>|    8.074|
-READ           |OUTCOMING_DATA<4>|    8.021|
-READ           |OUTCOMING_DATA<5>|    8.340|
-READ           |OUTCOMING_DATA<6>|    8.597|
-READ           |OUTCOMING_DATA<7>|    8.845|
+CONTROL<2>     |MOSI             |    6.172|
+READ           |OUTCOMING_DATA<0>|    8.301|
+READ           |OUTCOMING_DATA<1>|    8.064|
+READ           |OUTCOMING_DATA<2>|    8.309|
+READ           |OUTCOMING_DATA<3>|    8.350|
+READ           |OUTCOMING_DATA<4>|    8.594|
+READ           |OUTCOMING_DATA<5>|    8.912|
+READ           |OUTCOMING_DATA<6>|    8.635|
+READ           |OUTCOMING_DATA<7>|    8.872|
 ---------------+-----------------+---------+
 
 
-Analysis completed Mon Apr 15 22:15:19 2024 
+Analysis completed Mon Apr 15 23:09:47 2024 
 --------------------------------------------------------------------------------
 
 Trace Settings:

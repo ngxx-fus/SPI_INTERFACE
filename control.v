@@ -63,13 +63,21 @@ module CONTROL_COMBINATION(
         end
     end
     //SENDER: INTERRUPT transfering :v 
-    always @(WRITE, STATUS[3],STATUS[7]) 
+    always @(WRITE, STATUS[1],STATUS[7], STATUS[7]) 
     begin
-        if( CONTROL[1] == 1 || CONTROL[5] == 1)
+        if(STATUS[7] == 1) // error of connection
             TE = LOW;
-        else
-            TE = HIGH;
-
+        else 
+            if(CONTROL[4] == HIGH && STATUS[1] == HIGH )
+                TE = LOW; // interrupt when RECEIVER ready to receive data
+            else
+                if( CONTROL[1] == HIGH && STATUS[3] == HIGH) //overloading occurred
+                    TE = LOW;
+                else
+                    if( CONTROL[2] == LOW ) //enable transfering process
+                        TE = LOW;
+                    else 
+                        TE = HIGH;
     end
 
     //receiver
@@ -100,10 +108,16 @@ module CONTROL_COMBINATION(
 
     always @(READ, STATUS[2],STATUS[7]) 
     begin
-        if( CONTROL[0] == HIGH || CONTROL[5] == HIGH)
-            RE = LOW;
+        if( CONTROL[0] == HIGH && STATUS[2] == HIGH)//overloading occurred
+            RE = LOW;        
         else
-            RE = HIGH;
+            if( CONTROL[5] == HIGH && STATUS[7])
+                RE = LOW;
+            else
+                if( CONTROL[6] ==  LOW) //enable RECEIVING
+                    RE = LOW;
+                else
+                    RE = HIGH;
     end
 
     //other (included both sender and receiver :v)
