@@ -16,15 +16,23 @@ module STATUS_COMBINATION (
 
     output [7:0]STATUS
 );
-    //TODO: làm cái bảng này như trong bảng trong sách 
     reg [7:0] LOCAL_STATUS ;
     wire HIGH, LOW, HIGH_IMDEDANCE;
     initial begin
-        LOCAL_STATUS = 8'h30;
+        LOCAL_STATUS = 8'h33;
     end
 
     always @(CLR) begin
-        LOCAL_STATUS = 8'h30;
+        LOCAL_STATUS = 8'h33;
+    end
+
+    //LOCAL_STATUS[0]
+    always @(SENDER_FULL_STATE) begin
+        LOCAL_STATUS[0] = SENDER_FULL_STATE;
+    end
+    //LOCAL_STATUS[1]
+    always @(RECEIVER_EMPTY_STATE) begin
+        LOCAL_STATUS[1] = RECEIVER_EMPTY_STATE;
     end
     //LOCAL_STATUS[2]
     always @(RECEIVER_FULL_STATE)
