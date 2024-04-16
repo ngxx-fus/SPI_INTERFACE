@@ -2,7 +2,7 @@
 `include "control.v"
 `include "status.v"
 
-module SPI_Interface(
+module SPI(
 	input MS_MODE,
 	input CLK,
 	input CLR,

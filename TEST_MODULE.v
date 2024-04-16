@@ -1,5 +1,5 @@
 `include "clk_gen.v"
-`include "SPI_Interface.v"
+`include "SPI.v"
 `timescale 1ns/10ps
 
 module TEST_MODULE(
@@ -22,7 +22,7 @@ module TEST_MODULE(
 	wire [7:0] MASTER_STATUS; 
 	wire [7:0] MASTER_I_DATA; // to receive
 
-	SPI_Interface MASTER(
+	SPI MASTER(
 		.MS_MODE(HIGH),
 		.CLK(MASTER_CLK),
 		.CLR(MASTER_CLR),
@@ -50,7 +50,7 @@ module TEST_MODULE(
 	wire [7:0] SLAVE_STATUS; 
 	wire [7:0] SLAVE_I_DATA; // to receive
 
-	SPI_Interface SLAVE(
+	SPI SLAVE(
 		.MS_MODE(LOW),
 		.CLK(SLAVE_CLK),
 		.CLR(SLAVE_CLR),

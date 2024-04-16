@@ -29,6 +29,7 @@ module SENDER (
         .P_DATA_OUT(P_DATA_OUT)
     );
 
+    //l-------------- logic circuit -----------------------
     always @(SHIFT_CLK, CLR, WRITE)
         if(CLR == 1)
             COUNT_SENT = 4'b1000;
@@ -38,12 +39,13 @@ module SENDER (
                       COUNT_SENT = COUNT_SENT + 4'h1;
     always @(CLK)
         SHIFT_CLK = #5 CLK & TE;
-
-    assign LOW = 1'b0;
-    assign HIGH = 1'b1;  
+ 
     assign MOSI = (TE == HIGH)?(P_DATA_OUT[0]):(LOW);
     assign EMPTY_STATE = (COUNT_SENT == 4'b1000) ? HIGH : LOW;
     assign FULL_STATE = ((COUNT_SENT == 4'b0000))? HIGH : LOW;
+
+    assign LOW = 1'b0;
+    assign HIGH = 1'b1; 
 endmodule     
 
 
