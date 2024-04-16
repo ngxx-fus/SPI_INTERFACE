@@ -44,6 +44,7 @@ module SPI(
 
 	wire CONNECTION_FAILED_STATE;
 	wire CS_CONTROL;
+	wire LOCAL_MOSI;
 
 	//since the 8bit register is PIPO,
 	//so it can only FULL or EMPTY :v
@@ -73,7 +74,7 @@ module SPI(
 		.FULL_STATE(SENDER_FULL_STATE),
 		.EMPTY_STATE(SENDER_EMPTY_STATE),
 		.DATA(SENDER_BUFFER_DATA_O),
-		.MOSI(MOSI)
+		.MOSI(LOCAL_MOSI)
 	);
 	RECEIVER receiver(
 		.CLK(RECEIVER_CLK),
@@ -131,6 +132,7 @@ module SPI(
 		.CS(CS_CONTROL)
 	);
 
+	assign MOSI = (MS_MODE==HIGH)?(LOCAL_MOSI):((CS==HIGH)?1'bz:LOCAL_MOSI);
 	assign LOCAL_CLK = (MS_MODE==HIGH)?(CLK):(S_CLK);
 	assign S_CLK = (MS_MODE == HIGH)?(CLK & (~CS)):(1'bz);
 	assign OUTCOMING_DATA = (READ==HIGH)?RECEIVER_BUFFER_DATA_O:8'hzz;
