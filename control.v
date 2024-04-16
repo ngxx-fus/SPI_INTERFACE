@@ -13,7 +13,7 @@ module CONTROL_COMBINATION(
     output RECEIVER_CLR,   output reg RE,    output reg RECEIVER_READ,
     inout CS
 );
-    wire HIGH, LOW;
+    wire HIGH, LOW;        wire [7:0] LOCAL_CONTROL;
 	reg SENDER_CLR_FROM_BUFFER;
 
     initial begin
@@ -50,31 +50,24 @@ module CONTROL_COMBINATION(
         if(STATUS[7] == 1) // error of connection
             TE = LOW;
         else 
-            if(CONTROL[4] == HIGH && STATUS[1] == HIGH )
+            if(LOCAL_CONTROL[4] == HIGH && STATUS[1] == HIGH )
                 TE = LOW; // interrupt when RECEIVER ready to receive data
             else
-                if( CONTROL[1] == HIGH && STATUS[3] == HIGH) //overloading occurred
+                if( LOCAL_CONTROL[1] == HIGH && STATUS[3] == HIGH) //overloading occurred
                     TE = LOW;
                 else
-                    TE = CONTROL[2];
+                    TE = LOCAL_CONTROL[2];
     always @(READ, RECEIVER_FULL_STATE) 
         if(READ == HIGH)
-        begin
-            if(READ)
-                RECEIVER_BUFFER_FULL_STATE = LOW;
-            else 
-                RECEIVER_BUFFER_FULL_STATE = RECEIVER_BUFFER_FULL_STATE;
-        end
+            RECEIVER_BUFFER_FULL_STATE = LOW;
         else
-            if(RECEIVER_FULL_STATE == HIGH && RECEIVER_BUFFER_FULL_STATE == HIGH)
-            begin
+            if(RECEIVER_FULL_STATE == HIGH && RECEIVER_BUFFER_FULL_STATE == LOW) begin
                 #5 RECEIVER_BUFFER_FULL_STATE = HIGH;
                    RECEIVER_BUFFER_SH_LD = HIGH;
                    RECEIVER_READ = HIGH;
                 #30;
             end
-            else
-            begin
+            else begin
                 RECEIVER_BUFFER_FULL_STATE = RECEIVER_BUFFER_FULL_STATE;
                 RECEIVER_READ = LOW;
                 RECEIVER_BUFFER_SH_LD = LOW;
@@ -82,16 +75,18 @@ module CONTROL_COMBINATION(
             end
 
     always @(READ, STATUS[2],STATUS[7]) 
-        if( CONTROL[0] == HIGH && STATUS[2] == HIGH)//overloading occurred
+        if( LOCAL_CONTROL[0] == HIGH && STATUS[2] == HIGH)//overloading occurred
             RE = LOW;        
         else
-            if( CONTROL[5] == HIGH && STATUS[7])
+            if( LOCAL_CONTROL[5] == HIGH && STATUS[7])
                 RE = LOW;
             else
-                if( CONTROL[6] ==  LOW) //enable RECEIVING
-                    RE = LOW;
-                else
-                    RE = HIGH;
+                RE = LOCAL_CONTROL[6];
+    
+    assign LOCAL_CONTROL = (LOCAL_CONTROL[0] == 1'bz || LOCAL_CONTROL[1] == 1'bz
+    || LOCAL_CONTROL[2] == 1'bz || LOCAL_CONTROL[3] == 1'bz || LOCAL_CONTROL[4] == 1'bz
+    || LOCAL_CONTROL[5] == 1'bz || LOCAL_CONTROL[6] == 1'bz || LOCAL_CONTROL[7] == 1'bz)?
+    (CONTROL):(4'h0);
     assign SENDER_CLK = CLK;
     assign SENDER_CLR = CLR | SENDER_CLR_FROM_BUFFER;
     assign RECEIVER_CLK = CLK;  assign RECEIVER_CLR = CLR;
