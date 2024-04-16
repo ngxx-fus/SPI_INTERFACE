@@ -4,8 +4,8 @@
 
 module TEST_MODULE(
 	inout S_CLK,
-	inout MOSI,
-	inout MISO,
+	inout OUT,
+	inout IN,
 	inout CS
 );
 	wire HIGH, LOW;
@@ -32,8 +32,8 @@ module TEST_MODULE(
 		.STATUS(MASTER_STATUS),
 		.INCOMING_DATA(MASTER_O_DATA),
 		.OUTCOMING_DATA(MASTER_I_DATA),
-		.MISO(MISO),
-		.MOSI(MOSI),
+		.IN(IN),
+		.OUT(OUT),
 		.CS(CS),
 		.S_CLK(S_CLK)
 	);
@@ -60,8 +60,8 @@ module TEST_MODULE(
 		.STATUS(SLAVE_STATUS),
 		.INCOMING_DATA(SLAVE_O_DATA),
 		.OUTCOMING_DATA(SLAVE_I_DATA),
-		.MISO(MOSI),
-		.MOSI(MISO),
+		.IN(OUT),
+		.OUT(IN),
 		.CS(CS),
 		.S_CLK(S_CLK)
 	);

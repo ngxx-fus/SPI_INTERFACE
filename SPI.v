@@ -12,8 +12,8 @@ module SPI(
 	output [7:0] STATUS,
 	input  [7:0] INCOMING_DATA,
 	output [7:0] OUTCOMING_DATA,
-	input MISO,
-	output MOSI,
+	input IN,
+	output OUT,
 	inout CS,
 	inout S_CLK
 );
@@ -74,7 +74,7 @@ module SPI(
 		.FULL_STATE(SENDER_FULL_STATE),
 		.EMPTY_STATE(SENDER_EMPTY_STATE),
 		.DATA(SENDER_BUFFER_DATA_O),
-		.MOSI(LOCAL_MOSI)
+		.OUT(LOCAL_MOSI)
 	);
 	RECEIVER receiver(
 		.CLK(RECEIVER_CLK),
@@ -84,7 +84,7 @@ module SPI(
 		.FULL_STATE(RECEIVER_FULL_STATE),
 		.EMPTY_STATE(RECEIVER_EMPTY_STATE),
 		.DATA(RECEIVER_BUFFER_DATA_I),
-		.MISO(MISO)
+		.IN(IN)
 	);
 	STATUS_COMBINATION status(
 		//command signal
@@ -132,13 +132,13 @@ module SPI(
 		.CS(CS_CONTROL)
 	);
 
-	assign MOSI = (MS_MODE==HIGH)?(LOCAL_MOSI):((CS==HIGH)?1'bz:LOCAL_MOSI);
+	assign OUT = (MS_MODE==HIGH)?(LOCAL_MOSI):((CS==HIGH)?1'bz:LOCAL_MOSI);
 	assign LOCAL_CLK = (MS_MODE==HIGH)?(CLK):(S_CLK);
 	assign S_CLK = (MS_MODE == HIGH)?(CLK & (~CS)):(1'bz);
 	assign OUTCOMING_DATA = (READ==HIGH)?RECEIVER_BUFFER_DATA_O:8'hzz;
 	assign SENDER_BUFFER_DATA_I = INCOMING_DATA;
 	assign CONNECTION_FAILED_STATE = ((CS != 1 && CS!=0) 
-	                                ||(MISO != 1 && MISO!=0) 
+	                                ||(IN != 1 && IN!=0) 
 	                                ||(S_CLK != 1 && S_CLK!=0)  )?HIGH:LOW;
 	assign CS = (MS_MODE==HIGH)?(CS_CONTROL):1'bz;
 	assign LOW = 1'b0;

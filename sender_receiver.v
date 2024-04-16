@@ -2,18 +2,18 @@
 `include "shift_register_8bit.v"
 
 module SENDER (
-    input [7:0] DATA, 
-    input CLR,
-    input WRITE,
-    input TE,
-    input CLK,
-    output MOSI, 
+    input  [7:0] DATA, 
+    input  CLR,
+    input  WRITE,
+    input  TE,
+    input  CLK,
+    output OUT, 
     output FULL_STATE, 
     output EMPTY_STATE 
 );
     wire [7:0] P_DATA_OUT;
-    reg [3:0] COUNT_SENT;
-    reg SHIFT_CLK;
+    reg  [3:0] COUNT_SENT;
+    reg  SHIFT_CLK;
     wire LOW, HIGH;
 
     initial begin
@@ -40,7 +40,7 @@ module SENDER (
     always @(CLK)
         SHIFT_CLK = #5 CLK & TE;
  
-    assign MOSI = (TE == HIGH)?(P_DATA_OUT[0]):(LOW);
+    assign OUT = (TE == HIGH)?(P_DATA_OUT[0]):(LOW);
     assign EMPTY_STATE = (COUNT_SENT == 4'b1000) ? HIGH : LOW;
     assign FULL_STATE = ((COUNT_SENT == 4'b0000))? HIGH : LOW;
 
@@ -56,7 +56,7 @@ module RECEIVER (
     input CLR,
     input READ,
     input RE,
-    input MISO,
+    input IN,
     input CLK,
     output [7:0] DATA,
     output FULL_STATE, 
@@ -75,7 +75,7 @@ module RECEIVER (
         .CLK(SHIFT_CLK),
         .CLR(CLR),
         .P_DATA_IN(8'bzzzz_zzzz),
-        .S_DATA_IN(MISO),
+        .S_DATA_IN(IN),
         .SH_LD(HIGH),
         .P_DATA_OUT(P_DATA_OUT)
     );
