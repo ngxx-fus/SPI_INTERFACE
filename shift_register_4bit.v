@@ -16,10 +16,14 @@ module SHIFT_REGISTER_4BIT (
     wire [3:0]D_PRE;
     wire [3:0]S_PRE;
     
-    d_ff dff0 (.CLK(CLK), .CLR(D_CLR[0]), .PRE(D_PRE[0]), .DATA(S_DATA_IN),     .Q(P_DATA_OUT[3]) );
-    d_ff dff1 (.CLK(CLK), .CLR(D_CLR[1]), .PRE(D_PRE[1]), .DATA(P_DATA_OUT[3]), .Q(P_DATA_OUT[2]) );
-    d_ff dff2 (.CLK(CLK), .CLR(D_CLR[2]), .PRE(D_PRE[2]), .DATA(P_DATA_OUT[2]), .Q(P_DATA_OUT[1]) );
-    d_ff dff3 (.CLK(CLK), .CLR(D_CLR[3]), .PRE(D_PRE[3]), .DATA(P_DATA_OUT[1]), .Q(P_DATA_OUT[0]) );
+    d_ff dff0 (.CLK(CLK), .CLR(D_CLR[0]), .PRE(D_PRE[0]), 
+               .DATA(S_DATA_IN),     .Q(P_DATA_OUT[3]) );
+    d_ff dff1 (.CLK(CLK), .CLR(D_CLR[1]), .PRE(D_PRE[1]), 
+               .DATA(P_DATA_OUT[3]), .Q(P_DATA_OUT[2]) );
+    d_ff dff2 (.CLK(CLK), .CLR(D_CLR[2]), .PRE(D_PRE[2]), 
+               .DATA(P_DATA_OUT[2]), .Q(P_DATA_OUT[1]) );
+    d_ff dff3 (.CLK(CLK), .CLR(D_CLR[3]), .PRE(D_PRE[3]), 
+               .DATA(P_DATA_OUT[1]), .Q(P_DATA_OUT[0]) );
 
     not(notSH_LD, SH_LD);
     not(notCLR, CLR);
