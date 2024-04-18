@@ -83,15 +83,13 @@ module CONTROL_COMBINATION(
             else
                 RE = LOCAL_CONTROL[6];
     
-    assign LOCAL_CONTROL = (LOCAL_CONTROL[0] == 1'bz || LOCAL_CONTROL[1] == 1'bz
-    || LOCAL_CONTROL[2] == 1'bz || LOCAL_CONTROL[3] == 1'bz || LOCAL_CONTROL[4] == 1'bz
-    || LOCAL_CONTROL[5] == 1'bz || LOCAL_CONTROL[6] == 1'bz || LOCAL_CONTROL[7] == 1'bz)?
-    (CONTROL):(4'h0);
+    assign LOCAL_CONTROL = CONTROL;
     assign SENDER_CLK = CLK;
     assign SENDER_CLR = CLR | SENDER_CLR_FROM_BUFFER;
     assign RECEIVER_CLK = CLK;  assign RECEIVER_CLR = CLR;
     assign SENDER_BUFFER_SH_LD = ~WRITE;
-    assign CS = (TE==HIGH || RE==HIGH)?LOW:HIGH;
+    assign CS = ((TE==HIGH || RE==HIGH)
+                &&(CONTROL&8'h44!=4'00h))?LOW:HIGH;
 
 	assign LOW = 1'b0;
 	assign HIGH = 1'b1;
