@@ -69,8 +69,8 @@ module RECEIVER (
             if( RE & (~FULL_STATE) & (~READ) == HIGH ) 
                 COUNT_RECEIVED = COUNT_RECEIVED + 4'b0001;
 
-    always @(CLK)
-        SHIFT_CLK = #5 CLK & RE & (~FULL_STATE) & (~READ);
+	always @(RE)
+        SHIFT_CLK = #5 CLK & RE;
     assign LOW = 1'b0;           assign HIGH = 1'b1;  
     assign EMPTY_STATE        = (COUNT_RECEIVED == 4'B0000)?(HIGH):(LOW);
     assign FULL_STATE         = (COUNT_RECEIVED == 4'B1000)?(HIGH):(LOW);
