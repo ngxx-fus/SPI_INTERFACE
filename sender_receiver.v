@@ -28,7 +28,7 @@ module SENDER (
 				 COUNT_SENT = 4'h0;
 				 else if(TE == HIGH && EMPTY_STATE == LOW)
                       COUNT_SENT = COUNT_SENT + 4'h1;
-    always @(CLK)
+	always @(TE)
         SHIFT_CLK = #5 CLK & TE;
  
     assign OUT = (CLR==HIGH)?(1'bz):
