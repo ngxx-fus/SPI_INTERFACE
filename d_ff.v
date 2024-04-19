@@ -9,7 +9,7 @@ module d_ff(output reg Q, input DATA, input CLK, input CLR, input PRE);
 				if(CLR == 1) Q = 1'b0;
 				else if(PRE == 1) Q = 1'b1;
                 else if(PRE == 0 && CLR == 0) 
-                Q = (DATA==1'bz)?(0):(DATA);
+                Q = DATA;
                 else Q = Q;
         end
 
