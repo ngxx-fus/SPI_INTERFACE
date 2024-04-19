@@ -19,7 +19,7 @@ module SPI(
 	wire [7:0] SENDER_BUFFER_DATA_I;	wire [7:0] SENDER_BUFFER_DATA_O;
 	wire       SENDER_BUFFER_SH_LD;  	wire [7:0] RECEIVER_BUFFER_DATA_I;
 	wire [7:0] RECEIVER_BUFFER_DATA_O;	wire       RECEIVER_BUFFER_SH_LD;
-	wire CONNECTION_FAILED_STATE;  wire CS_CONTROL;      wire LOCAL_MOSI;
+	wire CONNECTION_FAILED_STATE;  wire CS_CONTROL;      wire LOCAL_OUT;
 	wire SENDER_BUFFER_FULL_STATE;
 	SHIFT_REGISTER_8BIT SENDER_BUFFER(
 		.CLK(LOW),
@@ -41,7 +41,7 @@ module SPI(
 		.CLK(SENDER_CLK),     .CLR(SENDER_CLR),
 		.WRITE(SENDER_WRITE), .TE(TE),
 		.FULL_STATE(SENDER_FULL_STATE),    .EMPTY_STATE(SENDER_EMPTY_STATE),
-		.DATA(SENDER_BUFFER_DATA_O),       .OUT(LOCAL_MOSI)
+		.DATA(SENDER_BUFFER_DATA_O),       .OUT(LOCAL_OUT)
 	);
 	
 	RECEIVER receiver(
@@ -84,15 +84,14 @@ module SPI(
 		.CS(CS_CONTROL)
 	);
 
-	assign OUT = (MS_MODE==HIGH)?(LOCAL_MOSI):((CS==HIGH)?1'bz:LOCAL_MOSI);
+	assign OUT = (MS_MODE==HIGH)?(LOCAL_OUT):((CS==HIGH)?1'bz:LOCAL_OUT);
 	assign LOCAL_CLK = (MS_MODE==HIGH)?(CLK):(S_CLK);
-	assign S_CLK = (MS_MODE == HIGH)?(CLK & (~CS)):(1'bz);
+	assign S_CLK = (MS_MODE == HIGH && (CONTROL&8'h44)!=8'h00)?CLK:(1'bz);
 	assign OUTCOMING_DATA = (READ==HIGH)?RECEIVER_BUFFER_DATA_O:8'hzz;
 	assign SENDER_BUFFER_DATA_I = INCOMING_DATA;
-	assign CONNECTION_FAILED_STATE = ((CS != 1 && CS!=0) 
-	                                ||(IN != 1 && IN!=0) 
-	                                ||(S_CLK != 1 && S_CLK!=0)  )?HIGH:LOW;
-	assign CS = (MS_MODE==HIGH)?(CS_CONTROL):1'bz;
+	assign CONNECTION_FAILED_STATE = (IN == 1'bz || IN == 1'bx)?LOW:((MS_MODE==HIGH)?HIGH:
+	                                 ~(CS == 1'bz || CS == 1'bx || S_CLK == 1'bz || S_CLK == 1'bx));
+	assign CS = (CONTROL[7]==HIGH)?LOW:((MS_MODE==HIGH)?(CS_CONTROL):1'bz);
 	assign LOW = 1'b0;
 	assign HIGH = 1'b1;
 endmodule

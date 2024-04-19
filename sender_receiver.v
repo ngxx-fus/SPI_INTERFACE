@@ -23,12 +23,12 @@ module SENDER (
     //l-------------- logic circuit -----------------------
     always @(SHIFT_CLK, CLR, WRITE)
         if(CLR == 1)
-            COUNT_SENT = 4'b1000;
+            COUNT_SENT = 4'h8;
         else if(WRITE == HIGH)
 				 COUNT_SENT = 4'h0;
 				 else if(TE == HIGH && EMPTY_STATE == LOW)
                       COUNT_SENT = COUNT_SENT + 4'h1;
-	always @(TE)
+	always @(CLK)
         SHIFT_CLK = #5 CLK & TE;
  
     assign OUT = (CLR==HIGH)?(1'bz):

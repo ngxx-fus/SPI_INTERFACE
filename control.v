@@ -40,7 +40,10 @@ module CONTROL_COMBINATION(
                     SENDER_WRITE = SENDER_EMPTY_STATE&HIGH;
                     #30;
                 end
+                else
+                    SENDER_WRITE = LOW;
             else begin
+                $display("*SENDER_WRITE : Off");
                 SENDER_BUFFER_FULL_STATE = SENDER_BUFFER_FULL_STATE;
                 #5 SENDER_WRITE = LOW;
             end
@@ -89,7 +92,7 @@ module CONTROL_COMBINATION(
     assign RECEIVER_CLK = CLK;  assign RECEIVER_CLR = CLR;
     assign SENDER_BUFFER_SH_LD = ~WRITE;
     assign CS = ((TE==HIGH || RE==HIGH)
-                &&(CONTROL&8'h44!=4'00h))?LOW:HIGH;
+                &&(CONTROL&8'h44!=8'h00))?LOW:HIGH;
 
 	assign LOW = 1'b0;
 	assign HIGH = 1'b1;

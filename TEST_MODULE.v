@@ -12,7 +12,7 @@ module TEST_MODULE(
 	//-----------------MASTER---------------------
 	wire MASTER_CLK; 
 	//freq = 1MHz
-	CLK_GEN MASTER_clk_gen(.FACTOR(32'h0019), .CLK(MASTER_CLK));
+	CLK_GEN MASTER_clk_gen(.FACTOR(32'h0009), .CLK(MASTER_CLK));
 	reg MASTER_MS_MODE;
 	reg [7:0] MASTER_O_DATA;
 	reg [7:0] MASTER_CONTROL;
@@ -22,6 +22,7 @@ module TEST_MODULE(
 	wire [7:0] MASTER_STATUS; 
 	wire [7:0] MASTER_I_DATA; // to receive
 
+	wire mw;
 	SPI MASTER(
 		.MS_MODE(HIGH),
 		.CLK(MASTER_CLK),
@@ -40,7 +41,7 @@ module TEST_MODULE(
 	//-----------------SLAVE---------------------
 	wire SLAVE_CLK; 
 	//freq = 1MHz
-	CLK_GEN SLAVE_clk_gen(.FACTOR(32'h0050), .CLK(SLAVE_CLK));
+	CLK_GEN SLAVE_clk_gen(.FACTOR(32'h0019), .CLK(SLAVE_CLK));
 	reg SLAVE_MS_MODE;
 	reg [7:0] SLAVE_O_DATA;
 	reg [7:0] SLAVE_CONTROL;
@@ -49,7 +50,7 @@ module TEST_MODULE(
 	reg SLAVE_WRITE;
 	wire [7:0] SLAVE_STATUS; 
 	wire [7:0] SLAVE_I_DATA; // to receive
-
+	wire w;
 	SPI SLAVE(
 		.MS_MODE(LOW),
 		.CLK(SLAVE_CLK),
