@@ -43,7 +43,6 @@ module CONTROL_COMBINATION(
                 else
                     SENDER_WRITE = LOW;
             else begin
-                $display("*SENDER_WRITE : Off");
                 SENDER_BUFFER_FULL_STATE = SENDER_BUFFER_FULL_STATE;
                 #5 SENDER_WRITE = LOW;
             end

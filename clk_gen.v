@@ -6,13 +6,10 @@ module CLK_GEN(
     reg [32:0] temp;
     initial begin
         CLK = 0;
-            for( temp = FACTOR; temp != 32'h0000; temp = temp - 32'h0001)
-				begin
-                #5; 
-                CLK =~CLK; 
-                CLK =~CLK;
-					 //temp = (temp == 32'h0000)?(FACTOR):(temp);
-				end
+        for( temp = FACTOR; temp > 32'h0000_0000; temp = temp - 32'h0000_0001)
+			for( c = 0; c < 8'h0F; c=c+8'h01)begin
+                CLK = #5 ~CLK;
+			end
     end
 
 endmodule
